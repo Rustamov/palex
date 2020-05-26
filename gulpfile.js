@@ -41,17 +41,10 @@ var path = {
         js: [
 
             'node_modules/jquery/dist/jquery.min.js',
-            //'node_modules/slick-carousel/slick/slick.min.js',
-            //'src/libs/mmenu/jquery.mmenu.all.js',
-            //'src/libs/mhead/jquery.mhead.js',
+            'node_modules/slick-carousel/slick/slick.min.js',
             // 'node_modules/object-fit-images/dist/ofi.min.js',
             'node_modules/svg4everybody/dist/svg4everybody.legacy.min.js',
             'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
-            //'node_modules/wowjs/dist/wow.min.js',
-            //'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
-            //'node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
-            //'node_modules/jquery-form-validator/form-validator/jquery.form-validator.min.js',
-            //'src/libs/fselect/fselect.min.js',
             //'node_modules/jquery-mask-plugin/dist/jquery.mask.min.js',
             //'node_modules/parsleyjs/dist/parsley.min.js',
 

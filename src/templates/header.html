@@ -10,12 +10,145 @@
     <title>Заголовок</title>
     <meta name="description" content="">
     
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="/css/styles.min.css">
 
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=865714b7-1fc0-49e4-ac3d-b917e31ad8de&lang=ru_RU"
-            type="text/javascript"></script>
+    <!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=865714b7-1fc0-49e4-ac3d-b917e31ad8de&lang=ru_RU"
+            type="text/javascript"></script> -->
 </head>
 <body>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="header__logo">
+                        <a class="header-logo" href="/">
+                            <img class="header-logo__img" src="/img/logo.png" alt="Palex Web">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <nav class="main-nav">
+                        <ul class="main-nav__list">
+                            <li class="main-nav__item">
+                                <a class="main-nav__link" href="#">Создание сайтов</a>
+                            </li>
+                            <li class="main-nav__item">
+                                <a class="main-nav__link" href="#">Продвижение</a>
+                            </li>
+                            <li class="main-nav__item">
+                                <a class="main-nav__link" href="#">Контекстная реклама</a>
+                            </li>
+                            <li class="main-nav__item">
+                                <a class="main-nav__link" href="#">Соцсети</a>
+                            </li>
+                            <li class="main-nav__item">
+                                <a class="main-nav__link" href="#">Портфолио</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="col">
+                    <nav class="header-nav">
+                        <div class="header-nav__content">
+                            <div class="header-nav__content-inner">
+                                <div class="header-nav__content-container">
+                                    <div class="container">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-9">
+                                                <ul class="header-nav__list">
+                                                    <li class="header-nav__item">
+                                                        <a class="header-nav__link" href="/">Главная</a>
+                                                    </li>
+                                                    <li class="header-nav__item">
+                                                        <a class="header-nav__link current" href="#">Услуги</a>
+                                                    </li>
+                                                    <li class="header-nav__item">
+                                                        <a class="header-nav__link" href="#">О компании</a>
+                                                    </li>
+                                                    <li class="header-nav__item">
+                                                        <a class="header-nav__link" href="#">Контакты</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+        
+                                            <div class="col-lg-3">
+                                                <div class="header-nav__box">
+                                                    <div class="inf-box">
+                                                        <div class="inf-box__title">Контакты</div>
+        
+                                                        <div class="inf-box__contacts">
+                                                            <div class="inf-box__email">
+                                                                <span class="inf-box__email-label">E-mail:</span>
+                                                                <a class="email inf-box__email-link" href="mailto:info@netcat.ru">info@netcat.ru</a>
+                                                            </div>
+        
+                                                            <span class="inf-box__phone">
+                                                                <span class="inf-box__phone-label">Телефон:</span>
+                                                                <a class="phone inf-box__phone-link" href="tel:+74959030510">+7 (495) 903 05 10</a>
+                                                            </span>
+                                                        </div>
+        
+                                                        <div class="inf-box__buttons">
+                                                            <div class="inf-box__buttons-item">
+                                                                <a class="inf-box__btn js-popup" href="#popup-callback">
+                                                                    <span class="inf-box__btn-icon">
+                                                                        <svg class="icon icon-phone" width="20" height="20">
+                                                                            <use xlink:href="#icon-phone"></use>
+                                                                        </svg>
+                                                                    </span>
+                                                                    <span class="inf-box__btn-text">Заказать звонок</span>
+                                                                </a>
+                                                            </div>
+        
+                                                            <div class="inf-box__buttons-item">
+                                                                <a class="inf-box__btn js-popup" href="#popup-email">
+                                                                    <span class="inf-box__btn-icon">
+                                                                        <svg class="icon icon-message" width="20" height="13">
+                                                                            <use xlink:href="#icon-message"></use>
+                                                                        </svg>
+                                                                    </span>
+                                                                    <span class="inf-box__btn-text">Написать на e-mail</span>
+                                                                </a>
+                                                            </div>
+        
+                                                            <div class="inf-box__buttons-item">
+                                                                <a class="inf-box__btn js-popup" href="#popup-request">
+                                                                    <span class="inf-box__btn-icon">
+                                                                        <svg class="icon icon-send" width="20" height="18">
+                                                                            <use xlink:href="#icon-send"></use>
+                                                                        </svg>
+                                                                    </span>
+                                                                    <span class="inf-box__btn-text">Отправить заявку</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+        
+                        <button class="header-nav__trigger js-header-nav-trigger" type="button" name="trigger">
+                            <span class="header-nav__trigger-icon">
+                                <i class="header-nav__trigger-icon-line header-nav__trigger-icon-line--1"></i>
+                                <i class="header-nav__trigger-icon-line header-nav__trigger-icon-line--2"></i>
+                                <i class="header-nav__trigger-icon-line header-nav__trigger-icon-line--3"></i>
+                            </span>
+                        </button>
+                    </nav>
+        
+                </div>
+            </div>
+        </div>
+        
+        
+    </header>
