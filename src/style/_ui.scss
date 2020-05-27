@@ -1,6 +1,6 @@
 $colorPink: #4b2659;
 $colorPinkLighter: #a186a8;
-$colorRed: #d32b2b;
+$colorOrange: #FD9191;
 $ffBrandonGrotesque: 'Brandon Grotesque', sans-serif;
 $ffMuller: 'Muller', sans-serif;
 
@@ -362,7 +362,7 @@ $ffMuller: 'Muller', sans-serif;
   top: 100%;
   left: 0;
   font-size: px-to-rem(26);
-  color: $colorRed;
+  color: $colorOrange;
   white-space: nowrap;
   text-align: inherit;
 
@@ -374,35 +374,30 @@ textarea {
   resize: vertical;
 }
 
+$inputTextPdLeft: 35px;
 .input-text {
   display: block;
   position: relative;
   margin: 0;
   padding: 0;
-  font-size: px-to-rem(30);
+  font-size: 14px;
   text-align: left;
-
-  &--center {
-    text-align: center;
-  }
 
   &__field {
     display: block;
     width: 100%;
     margin: 0;
-    padding: px-to-rem(10) 0 px-to-rem(6);
+    padding: 20px 35px 21px $inputTextPdLeft;
     font-size: inherit;
-     letter-spacing: .01em;
     line-height: 1.4;
     font-weight: 400;
     text-align: inherit;
     color: inherit;
     border: none;
-    background: transparent;
-    border-bottom: 1px solid $colorPink;
+    background: rgba(255, 255, 255, 0.1);
     outline: none;
     box-shadow: none;
-    border-radius: 0; 
+    border-radius: 30px; 
     transition: border-color 0.2s;
 
 
@@ -414,11 +409,16 @@ textarea {
     }
 
     &.parsley-error {
-      border-color: $colorRed;
+      border-color: $colorOrange;
     }
 
     &::-ms-clear {
       display: none;
+    }
+
+    &::placeholder {
+      color: inherit;
+      opacity: 0.7;
     }
   }
 
@@ -426,12 +426,11 @@ textarea {
   &__placeholder {
     position: absolute;
     height: auto;
-    top: px-to-rem(10);
-    letter-spacing: .01em;
-
+    top: 22px;
+    // transform: translateY(-50%);
     left: 0;
     right: 0;
-    //padding: 0 25px;
+    padding: 0 $inputTextPdLeft;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -439,23 +438,20 @@ textarea {
     font-style: normal;
     // pointer-events: none;
     color: inherit;
-    transform-origin: 0% 100%;
+    transform-origin: 0% 0%;
     transition: transform 0.2s;
     
     .input-text--dirty & {
-      transform: translate(0, px-to-rem(-30)) scale(0.7);
-    }
-    .input-text--center & {
-      transform-origin: 50% 100%;
+      text-shadow: 1px 1px #000;
+      transform: translate(-8px, -29px) scale(0.8);
     }
   }
 
   & .parsley-errors-list {
-    // top: 10px;
-    top: px-to-rem(10);
+    top: 100%;
     right: 0;
     text-align: right;
-    // left: auto;
+    left: auto;
   }
   
   @include media-breakpoint-down(lg) {
@@ -505,6 +501,8 @@ textarea {
       }
     }
   }
+
+  
 }
 
 
@@ -593,7 +591,7 @@ textarea {
   // }
   
   &.parsley-error &__input:not(:checked) ~ &__icon {
-    border-color: $colorRed;
+    border-color: $colorOrange;
   }
 
   &__input:checked ~ &__icon::before {
@@ -636,47 +634,49 @@ textarea {
   display: inline-block;
   vertical-align: middle;
   margin: 0;
-  padding: px-to-rem(34) px-to-rem(130) px-to-rem(30);
   text-decoration: none;
   text-align: center;
   font-family: inherit;
-  font-size: px-to-rem(28);
-  letter-spacing: 0.01em;
-  line-height: 1.1;
   font-style: normal;
   font-weight: 400;
-  color: $colorPink;
-  text-transform: uppercase;
+  text-transform: none;
   white-space: nowrap;
-
-  border: 1px solid $colorPink;
-  outline: none;
-  box-shadow: none;
-  background: none;
   cursor: pointer;
-
-  &::before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: 2px;
-    right: 2px;
-    bottom: 2px;
-    left: 2px;
-    // border: 2px solid $colorPinkLighter;
-    background: $colorPinkLighter;
-
-    transition: 0.3s;
-    
-    opacity: 0;
-    transform: scale(0.7);
+  
+  &--geom {
+    &-def {
+      padding: 20px 42px;
+      font-size: 18px;
+      line-height: 1.15;
+      border-radius: 30px;
+    }
   }
 
-  &:hover::before,
-  &:active::before,
-  &:focus::before {
-    opacity: 1;
-    transform: scale(1);
+  &--theme {
+    &-def {
+      border: none;
+      outline: none;
+      box-shadow: none;
+      background: $colorOrange;
+      transition: background 0.2s;
+      color: inherit;
+
+      &:hover,
+      &:active,
+      &:focus{
+        color: inherit;
+        background: darken($colorOrange, 10);
+      }
+    }
   }
 
+
+
+  
+
+}
+
+
+.section-title {
+  font-family: 'FuturaDemiC';
 }

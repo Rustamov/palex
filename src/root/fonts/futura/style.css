@@ -1,14 +1,14 @@
 
-@font-face {
-	font-family: 'FuturaDemiC';
-	src: url('../fonts/futura/FuturaDemiC.eot');
-	src: local('Futura Demi Cyrillic'), local('FuturaDemiC'),
-		url('../fonts/futura/FuturaDemiC.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/futura/FuturaDemiC.woff') format('woff'),
-		url('../fonts/futura/FuturaDemiC.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
+// @font-face {
+// 	font-family: 'FuturaDemiC';
+// 	src: url('../fonts/futura/FuturaDemiC.eot');
+// 	src: local('Futura Demi Cyrillic'), local('FuturaDemiC'),
+// 		url('../fonts/futura/FuturaDemiC.eot?#iefix') format('embedded-opentype'),
+// 		url('../fonts/futura/FuturaDemiC.woff') format('woff'),
+// 		url('../fonts/futura/FuturaDemiC.ttf') format('truetype');
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
 
 @font-face {
 	font-family: 'FuturaBookC';

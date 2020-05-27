@@ -1,62 +1,76 @@
 
 //= templates/header.html
 
-<div class="container">
-    <div class="feedback-form">
-        <div class="feedback-form__main">
-          <form class="js-validate js-feedback-form" action="#" autocomplete="off"><!-- js-feedback-form for backend -->
-                <input type="hidden" name="Форма" value="Cвяжитесь с нами">
+<div style="background: #5665EB; color: #fff; padding: 50px 0">
+    <div class="container">
+        <h2 class="section-title">Мы свяжемся с вами в ближайшее время</h2>
+        <div class="feedback-form">
+            <div class="feedback-form__main">
+            <form class="js-validate js-feedback-form" action="#" autocomplete="off"><!-- js-feedback-form for backend -->
+                    <input type="hidden" name="Форма" value="Cвяжитесь с нами">
 
-                <div class="feedback-form__fields">
-                    <div class="feedback-form__fields-item">
-                        <label class="input-text">
-                <input class="input-text__field" type="text" name="Name" required="" data-parsley-person-name="">
-                <span class="input-text__placeholder">Имя</span>
-                </label>
-                    </div>
+                    <div class="feedback-form__fields">
+                        <div class="feedback-form__fields-item">
+                            <label class="input-text">
+                                <input class="input-text__field" type="text" name="Name" required data-parsley-person-name>
+                                <span class="input-text__placeholder">Имя</span>
+                            </label>
+                        </div>
 
-                    <div class="feedback-form__fields-item feedback-form__fields-item--mb-60">
-                        <label class="input-text">
-                <input class="input-text__field" type="email" name="email" required="">
-                <span class="input-text__placeholder">E-mail</span>
-                </label>
+                        <br>
+
+                        <div class="feedback-form__fields-item feedback-form__fields-item--mb-60">
+                            <label class="input-text">
+                                <input class="input-text__field" type="tel" name="tel" required>
+                                <span class="input-text__placeholder">Телефон</span>
+                            </label>
+                        </div>
+                        
+                        <br>          
+
+                        <div class="feedback-form__fields-item feedback-form__fields-item--mb-60">
+                            <label class="input-text">
+                                <input class="input-text__field" type="email" name="email" required>
+                                <span class="input-text__placeholder">Электронная почта</span>
+                            </label>
+                        </div>
+                        
+                        <br>
+
+                        <div class="feedback-form__fields-item">
+                            <label class="input-text">
+                                <textarea class="input-text__field" name="Message" rows="4" required></textarea>
+                                <span class="input-text__placeholder">Сообщение</span>
+                            </label>
+                        </div>
                     </div>
                     
-                    <hr class="feedback-form__fields-hr">
-                    <div class="feedback-form__fields-item">
-                        <label class="input-text">
-                <textarea class="input-text__field" name="Message" rows="4" required=""></textarea>
-                <span class="input-text__placeholder">Сообщение</span>
-                </label>
+                    <br>
+
+                    <div class="feedback-form__agree">
+                        <span class="checkbox-wrap">
+                            <label class="checkbox">
+                                <input class="checkbox__input" type="checkbox" name="Согласие на обработку данных" value="Я соглашаюсь с Правилами пользования и Политикой конфиденциальности" required data-parsley-error-message="Нужно согласие на обработку данных">
+                                <i class="checkbox__icon"></i>
+                                <span class="checkbox__text">Я соглашаюсь с Правилами пользования и Политикой конфиденциальности</span>
+                            </label>
+                        </span>
                     </div>
-                </div>
+                    <br>
+                    <div class="feedback-form__submit-wrap">
+                        <button class="btn btn--theme-def btn--geom-def feedback-form__submit" type="submit">Отправить</button>
+                    </div>	       
+            </form>
+        </div>
 
-                <div class="feedback-form__agree">
-                    <span class="checkbox-wrap">
-                        <label class="checkbox">
-                            <input class="checkbox__input" type="checkbox" name="Согласие на обработку данных" value="Я соглашаюсь с Правилами пользования и Политикой конфиденциальности" required="" data-parsley-error-message="Нужно согласие на обработку данных">
-                            <i class="checkbox__icon">
-                                
-                            </i>
-                            <span class="checkbox__text">Я соглашаюсь с Правилами пользования и Политикой конфиденциальности</span>
-                        </label>
-                    </span>
-                </div>
+        <div class="feedback-form__message">
+            <div class="feedback-form__message-text text">
+                    <p>Благодарим за обращение</p>
+            </div>
+        </div>
 
-                <div class="feedback-form__submit-wrap">
-                    <button class="btn feedback-form__submit" type="submit">Отправить</button>
-                </div>	       
-        </form>
-    </div>
-
-    <div class="feedback-form__message">
-        <div class="feedback-form__message-text text">
-                <p>Благодарим за обращение</p>
         </div>
     </div>
-
-    </div>
 </div>
-
 
 //= templates/footer.html
