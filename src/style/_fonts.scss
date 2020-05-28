@@ -1,4 +1,6 @@
+/*FuturaBookC */
 
+/*
 @font-face {
 	font-family: 'FuturaDemiC';
 	src: url('../fonts/futura/FuturaDemiC.eot');
@@ -8,7 +10,7 @@
 		url('../fonts/futura/FuturaDemiC.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
-}
+}*/
 
 @font-face {
 	font-family: 'FuturaBookC';
@@ -86,3 +88,19 @@
 	font-weight: 400;
 	font-style: normal;
 }
+/* End FuturaBookC */
+
+
+/* Futuris */
+@font-face {
+    font-family: 'Futuris';
+    src: url('../fonts/futuris/Futuris-Bold.eot');
+    src: url('../fonts/futuris/Futuris-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/futuris/Futuris-Bold.woff2') format('woff2'),
+        url('../fonts/futuris/Futuris-Bold.woff') format('woff'),
+        url('../fonts/futuris/Futuris-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+/* End Futuris */
+

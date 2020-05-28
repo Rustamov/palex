@@ -7,12 +7,12 @@
 
 body {
   min-width: 320px;
-  font-family: sans-serif;
-  font-family: 'FuturaBookC';
-  
-  
+
+  font-family: $ffFuturaBookC;
   font-size: 20px;
   line-height: 1.15;
+  letter-spacing: 0.01em;
+
   color: #000000;
   background: #fff;
 }
