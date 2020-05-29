@@ -1,6 +1,17 @@
-$colorPink: #4b2659;
-$colorPinkLighter: #a186a8;
-$colorOrange: #FD9191;
+
+$color-main: #525466;
+$color-main-1: #363740;
+
+$color-main-2: #FD9191;
+
+$color-main-3: #5665EB;
+$color-main-4: #71A5F4;
+
+$color-main-5: #E1E3EF;
+$color-main-6: #777E88;
+
+
+
 
 $ffFuturaBookC: 'FuturaBookC', sans-serif;
 $ffFuturis: 'Futuris', 'FuturaBookC', sans-serif;
@@ -16,6 +27,16 @@ $ffFuturis: 'Futuris', 'FuturaBookC', sans-serif;
   }
 }
 
+[data-go-link] {
+  cursor: pointer;
+}
+
+
+img,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
 
 
 
@@ -136,224 +157,6 @@ $ffFuturis: 'Futuris', 'FuturaBookC', sans-serif;
 
 
 
-.header-nav {
-  margin: 0;
-  display: inline-block;
-  vertical-align: middle;
-  color: blue;
-  
-  &__trigger {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    z-index: 2;
-    display: inline-block;
-    vertical-align: middle;
-
-    box-shadow: none;
-    outline: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: 0.5s;
-    outline: none;
-
-
-    &-icon {
-      display: inline-block;
-      position: relative;
-      width: px-to-rem(80);
-      height: px-to-rem(80);
-      color: #135da1;
-      background: none;
-      border: none;
-      outline: none;
-
-      transition: all 0.5s 0.3s;
-      will-change: transform;
-
-      .header-nav.open & {
-        transform: rotate(135deg);
-      }
-
-      &-line {
-        position: absolute;
-        right: 25%;
-        left: 25%;
-        height: 2px;
-        margin-top: -1px;
-        background-color: currentcolor;
-        transition: top 0.5s 0.3s, transform 0.5s 0.3s, opacity 0.5s 0.3s, background-color 0s 0s, right 0.5s 0.3s;
-
-        .header-nav.open & {
-          top: 50%;
-        }
-        &--1 {
-          top: 31%;
-        }
-        &--2 {
-          top: 50%;
-        }
-        .header-nav.open &--2 {
-          opacity: 0;
-        }
-        &--3 {
-          top: 69%;
-          right: 38%;
-
-          .header-nav:not(.open) .header-nav__trigger:hover &,
-          .header-nav:not(.open) .header-nav__trigger:active & {
-            right: 25%;
-          }
-        }
-        .header-nav.open &--3 {
-          transform: rotate(90deg);
-          right: 25%;
-        }
-      }
-    }
-
-
-
-
-
-  }
-
-
-  &__content {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    text-align: left;
-    z-index: 1;
-    background: lightgrey;
-    color: #000;
-    height: 100vh;
-    overflow: auto;
-    padding: 0 px-to-rem(80);
-    transition: 0.5s;
-
-
-    .header-nav.open & {
-      left: 0%;
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: px-to-rem(80);
-      width: 2px;
-      background: rgba(192,192,192,0.2);
-    }
-
-
-    &-inner {
-      width: 100%;
-      min-height: 100vh;
-      min-height: calc(var(--vh, 1vh) * 100);
-
-
-      display: flex;
-      align-items: center;
-    }
-
-    &-container {
-      width: 100%;
-    }
-  }
-
-
-  &__list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  &__item {
-    &:not(:last-child) {
-      margin-bottom: px-to-rem(25);
-    }
-
-    transform: translateX(-10px);
-    opacity: 0;
-    transition: 0.5s;
-    
-    .header-nav.open & {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    
-
-    @for $i from 1 through 20 {
-      &:nth-of-type(#{$i}) { transition: 0.3s #{0.3 + ($i / 10) }s; }
-    }
-
-  }
-
-  &__link {
-    text-transform: uppercase;
-    position: relative;
-    text-decoration: none;
-    font-size: 40px;
-    line-height: 1.1;
-    font-weight: 700;
-    color: #000;
-
-    &:hover,
-    &:active,
-    &.current {
-      color: blue;
-    }
-  }
-
-  @media (max-width: 991.98px) {
-
-    &__trigger {
-      .header-nav-open.header-nav-scroll & {
-        position: fixed;
-        right: 0;
-        top: 1rem;
-        z-index: 3;
-      }
-    }
-
-    &__content {
-
-      background: #f5f5f5;
-      padding: px-to-rem(100) 0;
-      text-align: center;
-
-
-      &::before {
-        content: none;
-        display: none;
-      }
-
-
-      &-inner {
-        width: 100%;
-        min-height: 80vh;
-        min-height: calc(100vh - #{px-to-rem(200)});
-      }
-
-    }
-
-
-
-    &__list {
-      margin: 0 0 5vh;
-    }
-
-    &__contacts {
-      margin: 0 0 2vh;
-    }
-
-  }
-}
-
 
 .parsley-errors-list {
   list-style: none;
@@ -363,7 +166,7 @@ $ffFuturis: 'Futuris', 'FuturaBookC', sans-serif;
   top: 100%;
   left: 0;
   font-size: px-to-rem(26);
-  color: $colorOrange;
+  color: $color-main-2;
   white-space: nowrap;
   text-align: inherit;
 
@@ -410,7 +213,7 @@ $inputTextPdLeft: 35px;
     }
 
     &.parsley-error {
-      border-color: $colorOrange;
+      border-color: $color-main-2;
     }
 
     &::-ms-clear {
@@ -508,126 +311,180 @@ $inputTextPdLeft: 35px;
 
 
 .checkbox {
+  $b: &;
+
   &-wrap {
     position: relative;
-    display: block;
-    font-size: 0;
-    line-height: 0;
-
-    .parsley-errors-list {
-      left: auto;
-      top: 0;
-      bottom: auto;
-      right: 0;
-      margin-top: 0;
-      // margin-top: px-to-rem(20);
-      // font-size: px-to-rem(26);
-      line-height: 1.1;
-    }
+    display: inline-block;
+    vertical-align: middle;
   }
 
   position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  cursor: pointer;
-  font-size: px-to-rem(30);
+  display: flex;
+  align-items: start;
 
-  
+  vertical-align: middle;
+  padding: 11px 25px 11px 15px;
+
+  font-size: 16px;
+  color: #fff;
+
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+
+  transition: background 0.2s, color 0.2s;
+
+  &:hover,
+  &:active, 
+  &:focus {
+    color: $color-main-2;
+    background: rgba(255, 255, 255, 1);
+  }
+
   &__input {
     opacity: 0;
     position: absolute;
     pointer-events: none
   }
+
   &__icon {
     position: relative;
+    top: 4px;
+    z-index: 1;
+    width: 17px;
+    min-width: 17px;
+    height: 17px;
+    margin: 0 15px 0 0;
+    background: none; 
+    border: 1px solid currentColor;
+    border-radius: 2px;
+    transition: border-color 0.2s;
+  }  
+
+  &__input:checked ~ &__icon::after {
+    content: '';
     position: absolute;
-    top: 1px;
-    left: 0;
-    width: px-to-rem(90);
-    height: px-to-rem(90);
-    margin: 0;
-    color: $colorPink;
-    background: none;
-    border: 1px solid currentcolor;
-    transition: color 0.2s, border-color 0.2s;
-
-    &::before {
-      content: '';
-      position: absolute;
-      z-index: 1;
-      width: px-to-rem(47);
-      height: px-to-rem(45);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      margin: auto;
-      background: url('../img/icon-check.png') 50% 50% no-repeat;
-      background-size: contain;
-      opacity: 0;
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      z-index: 0;
-      top: 2px;
-      right: 2px;
-      bottom: 2px;
-      left: 2px;
-      // border: 2px solid $colorPinkLighter;
-      background: $colorPinkLighter;
-
-      transition: 0.3s;
-      
-      opacity: 0;
-      transform: scale(0.7);
-    }
-
-  }
-
-
-  // &:hover &__icon {
-  //   color: #000;
-  //   border-color: #000;
-  // }
-  
-  &.parsley-error &__input:not(:checked) ~ &__icon {
-    border-color: $colorOrange;
-  }
-
-  &__input:checked ~ &__icon::before {
-    opacity: 1;
-  }
-
-  &:hover &__icon::after {
-    opacity: 1;
-    transform: scale(1);
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 10px;
+    border: 2px solid currentcolor;
+    margin-top: -7px;
+    margin-left: -3px;
+    transform: rotate(45deg);
+    border-top: none;
+    border-left: none;
   }
   
-  // &__input:checked ~ &__icon::after {
-  //   opacity: 1;
-  //   transform: scale(1);
-  // }
-
-
   &__text {
     display: block;
     width: 100%;
-    padding: px-to-rem(35) 0 0 px-to-rem(130);
-    font-size: inherit;
-    color: inherit;
-    line-height: 1.15;
-    letter-spacing: .01em;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    font-weight: 400;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+  
+  &.parsley-error ~ .parsley-errors-list {
+    top: 100%;
+    left: 0;
+    text-align: right;
+    left: auto;
+    font-size: 14px;
+  }
+}
+
+
+.radio {
+  $b: &;
+
+  &-wrap {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px 20px;
+
+  font-size: 18px;
+  color: #fff;
+
+  cursor: pointer;
+
+
+  &:hover,
+  &:active, 
+  &:focus {
+    color: $color-main-2;
+  }
+
+  &__input {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none
+  }
+
+  &__bg {
+    position: absolute;
+    top: 4px;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: 0;
+
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+
+    #{$b}:hover &,
+    #{$b}:active & {
+      background: rgba(255, 255, 255, 0.8);
+    }
+    
+    #{$b}__input:focus ~ &,
+    #{$b}__input:checked ~ & {
+      background: rgba(255, 255, 255, 1);
+    }
+    
+  
+  }  
+
+  &__text {
+    position: relative;
+    z-index: 1;
+    display: block;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
     font-weight: 400;
     overflow-wrap: break-word;
     word-wrap: break-word;
 
-    .checkbox--geom-sm & {
-      padding: 1px 0 0 25px;
+    #{$b}__input:focus ~ &,
+    #{$b}__input:checked ~ & {
+      color: $color-main-2;
     }
   }
-
+  
+  &.parsley-error ~ .parsley-errors-list {
+    top: 100%;
+    left: 0;
+    text-align: right;
+    left: auto;
+    font-size: 14px;
+  }
 }
+
 
 
 .btn {
@@ -658,7 +515,7 @@ $inputTextPdLeft: 35px;
       border: none;
       outline: none;
       box-shadow: none;
-      background: $colorOrange;
+      background: $color-main-2;
       transition: background 0.2s;
       color: inherit;
 
@@ -666,7 +523,7 @@ $inputTextPdLeft: 35px;
       &:active,
       &:focus{
         color: inherit;
-        background: darken($colorOrange, 10);
+        background: darken($color-main-2, 10);
       }
     }
   }
@@ -677,13 +534,122 @@ $inputTextPdLeft: 35px;
 
 }
 
+.btn-arrow {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 58px;
+  height: 58px;
+  display: inline-block;
+  vertical-align: middle;
 
+  text-decoration: none;
+  text-align: center;
+  line-height: 58px;
+  font-style: normal;
+  font-family: inherit;
+  color: $color-main-6;
+  white-space: nowrap;
+
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: $color-main-5;
+  border-radius: 4px;
+  transition: color 0.2s, background 0.2s;
+  cursor: pointer;
+
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  
+  &:hover,
+  &:active {
+    color: #fff;
+    background: $color-main-3;
+  }
+
+  &__icon {
+    display: inline-block;
+    color: currentColor;
+    fill: currentColor;
+  }
+}
+
+
+
+
+
+
+
+.socials {
+  display: flex;
+  align-items: center;
+  color: $color-main-3;
+
+  &__item {
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    fill: currentcolor; 
+    color: currentcolor; 
+    outline: none;
+    transition: color 0.2s;
+    
+    & + & { 
+      margin-left: 20px; 
+    }
+    
+    &:hover {
+      color: darken($color-main-3, 10);
+    }
+
+    svg {
+      display: block;
+    }
+
+  }
+}
+
+.phone-number {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+
+  &--theme-dark {
+    color: $color-main;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-main-1;
+    }
+  }
+
+  &--theme-white {
+    color: #fff;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-main-5;
+    }
+  }
+
+}
+
+// @extends;
 .section-title {
   font-family: $ffFuturis;
   font-style: normal;
   font-weight: 700;
   font-size: 38px;
 }
+
 .section-title-2 {
   font-family: $ffFuturis;
   font-style: normal;
@@ -691,3 +657,6 @@ $inputTextPdLeft: 35px;
   font-size: 24px;
   color: rgba(255, 255, 255, 0.68);
 }
+
+// END @extends;
+

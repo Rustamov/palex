@@ -10,17 +10,25 @@ body {
 
   font-family: $ffFuturaBookC;
   font-size: 20px;
-  line-height: 1.15;
+  line-height: 1.625;
   letter-spacing: 0.01em;
 
-  color: #000000;
+  color: $color-main;
   background: #fff;
 }
 
 
+.container {
+  @include media-breakpoint-up(xl) {
+    max-width: 1185px;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
 
 
 
+@import '_header';
 
 
 

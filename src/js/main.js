@@ -29,32 +29,23 @@ $(document).ready(function () {
         wHeight =  $window.height();
     });
 
-    headertMenu();
+    headerMenu();
 
     formScript();
 
-    function headertMenu () {
-        let headerNav = $('.header-nav'),
+    othersScript();
+
+    function headerMenu () {
+        let headerNav = $('.header-menu'),
             headerNavIsOpen = headerNav.hasClass('open'),
-            openClass = 'header-nav-open',
+            openClass = 'header-menu-open',
             opening = false,
             transitionTime = 500,
             timeout;
 
-
-
-        $body.on('click touch', '.js-header-nav-trigger', function (e) {
+        $body.on('click touch', '.js-header-menu-trigger', function (e) {
             e.preventDefault();
             navToggle();
-        });
-
-
-        $body.on('click touch', function (event) {
-            let obj = $(event.target);
-
-            if ( !opening && headerNav.hasClass('open') && !obj.closest('.header-nav').length && !obj.closest('.fancybox-container').length ) {
-                navClose();
-            };
         });
 
         $body.on('keydown', function(e) {
@@ -67,14 +58,16 @@ $(document).ready(function () {
             if ( opening ) {
                 return 
             }
-
+        
             opening = true;
 
             headerNavIsOpen = headerNav.hasClass('open');
 
             headerNav.toggleClass('open', !headerNavIsOpen);
 
+
             if (!headerNavIsOpen) {
+                globalOpt.freeze();
                 $body.toggleClass(openClass, true);
             }
         
@@ -87,20 +80,20 @@ $(document).ready(function () {
 
                 if (!headerNavIsOpen) {
                     $body.toggleClass(openClass, false);
+                    globalOpt.unfreeze();
                 }
                 opening = false;
             }, transitionTime)
-            
         };
 
-        $('.header-nav__content').on('scroll',function(e) {
-            if ( $('.header-nav__content').scrollTop() > 10 ) {
-                $body.addClass('header-nav-scroll');
+        $('.header-menu').on('scroll',function(e) {
+            if ( $('.header-menu').scrollTop() > 10 ) {
+                $body.addClass('header-menu-scroll');
             } else {
-                $body.removeClass('header-nav-scroll');
+                $body.removeClass('header-menu-scroll');
             }
         });
-    };
+    }
 
     function formScript () {
 
@@ -192,55 +185,114 @@ $(document).ready(function () {
         });
 
        
-    };
+    }
+
+    function othersScript() {
+        $body.on('click touch', '[data-go-link]', function (e) {
+            e.preventDefault();
+            window.open($(this).data('go-link'));
+        });
+
+        if ( $('.sec-reviews__slides').length ) {
+            $('.sec-reviews__slides').slick({
+              slideToShow: 1,
+              arrows: true,
+              prevArrow: '<button class="btn-arrow btn-arrow--left">&nbsp;</button>',
+              nextArrow: '<button class="btn-arrow btn-arrow--right">&nbsp;</button>',
+              dots: false,
+              infinite: false,
+            });
+          };
+    }
+
+
 
 });
 
-function formResset(form) {
-    if ( !form.length ) {
-        return
-    }
-
-    $('.input-text input, .input-text textarea', form).each(function() {
-        let input = $(this),
-            wrap = input.closest('.input-text');
-
-        input.val('').trigger('input');
-
-
-        wrap.toggleClass('input-text--dirty', input.val() != '');
-    });
-
-    form.parsley().reset();
-
-};
-
-
-function formSuccessSent(form) {
-    if ( form.length ) {
-        form.addClass('form-sent');
-
-
-        formResset(form);
-
-        if ( form.closest('.popup').length ) {
-            form.closest('.popup').addClass('popup--form-sent');
-        } else if ( form.closest('.feedback-form').length ) {
-            form.closest('.feedback-form').addClass('feedback-form--form-sent');
+class globalConst {
+    formResset(form) {
+        if ( !form.length ) {
+            return
         }
+    
+        $('.input-text input, .input-text textarea', form).each(function() {
+            let input = $(this),
+                wrap = input.closest('.input-text');
+    
+            input.val('').trigger('input');
+    
+    
+            wrap.toggleClass('input-text--dirty', input.val() != '');
+        });
+    
+        form.parsley().reset();
+    
+    };
+    
+    formSuccessSent(form) {
+        if ( form.length ) {
+            form.addClass('form-sent');
+    
+    
+            formResset(form);
+    
+            if ( form.closest('.popup').length ) {
+                form.closest('.popup').addClass('popup--form-sent');
+            } else if ( form.closest('.feedback-form').length ) {
+                form.closest('.feedback-form').addClass('feedback-form--form-sent');
+            }
+    
+    
+    
+            setTimeout(function() {
+                form.removeClass('form-sent');
+                $('.popup').removeClass('popup--form-sent');
+                $('.feedback-form').removeClass('feedback-form--form-sent');
+    
+                if ($('.fancybox-is-open').length) {
+                    $.fancybox.close();
+                };
+    
+            }, 8000);
+    
+        }
+    };
 
+    // Скрипт "замораживает" страничку, запрещая скролл
+    freeze() {
+        const h = $('html');
 
+        if (h.css('position') !== 'fixed') {
+            const top = h.scrollTop() ? h.scrollTop() : $body.scrollTop();
 
-        setTimeout(function() {
-            form.removeClass('form-sent');
-            $('.popup').removeClass('popup--form-sent');
-            $('.feedback-form').removeClass('feedback-form--form-sent');
+            if (window.innerWidth > h.width()) {
+                h.css('overflow-y', 'scroll');
+            }
 
-            if ($('.fancybox-is-open').length) {
-                $.fancybox.close();
-            };
-
-        }, 8000);
-
+            h.css({
+                width: '100%',
+                position: 'fixed',
+                top: -top,
+            });
+        }
     }
-};
+
+    unfreeze() {
+        const h = $('html');
+
+        if (h.css('position') === 'fixed') {
+            h.css('position', 'static');
+
+            $('html, body').scrollTop(-parseInt(h.css('top'), 10));
+
+            h.css({
+                position: '',
+                width: '',
+                top: '',
+                'overflow-y': '',
+            });
+        }
+    }
+}
+
+const globalOpt = new globalConst;

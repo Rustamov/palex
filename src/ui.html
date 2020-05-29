@@ -52,11 +52,28 @@
                     <div class="feedback-form__agree">
                         <span class="checkbox-wrap">
                             <label class="checkbox">
-                                <input class="checkbox__input" type="checkbox" name="Согласие на обработку данных" value="Я соглашаюсь с Правилами пользования и Политикой конфиденциальности" required data-parsley-error-message="Нужно согласие на обработку данных">
+                                <input class="checkbox__input" type="checkbox" name="Оплата через сайт" value="Да">
                                 <i class="checkbox__icon"></i>
-                                <span class="checkbox__text">Я соглашаюсь с Правилами пользования и Политикой конфиденциальности</span>
+                                <span class="checkbox__text">Оплата через сайт</span>
                             </label>
                         </span>
+
+                        <span class="radio-wrap">
+                            <label class="radio">
+                                <input class="radio__input" type="radio" name="Вам нужен" value="Редизайн сайта">
+                                <i class="radio__bg"></i>
+                                <span class="radio__text">Редизайн сайта</span>
+                            </label>
+                        </span>
+
+                        <span class="radio-wrap">
+                            <label class="radio">
+                                <input class="radio__input" type="radio" name="Вам нужен" value="Дизайн сайта + продвижение">
+                                <i class="radio__bg"></i>
+                                <span class="radio__text">Дизайн сайта + продвижение</span>
+                            </label>
+                        </span>
+                        
                     </div>
                     <br>
                     <div class="feedback-form__submit-wrap">
@@ -74,5 +91,35 @@
         </div>
     </div>
 </div>
+
+<div>
+    <div class="container">
+        <button class="btn-arrow btn-arrow--left">
+            <svg class="btn-arrow__icon" width="7" height="12">
+                <use xlink:href="/img/svg/sprite.svg#arr-small-left"></use>
+            </svg>
+        </button>
+        <button class="btn-arrow btn-arrow--right">
+            <svg class="btn-arrow__icon" width="7" height="12">
+                <use xlink:href="/img/svg/sprite.svg#arr-small-right"></use>
+            </svg>
+        </button>
+
+        <span class="socials">
+            <span class="socials__item socials__item--fb" data-go-link="https://www.facebook.com/">
+                <svg width="31" height="32"><use xlink:href="/img/svg/sprite.svg#soc-fb"></use></svg>
+            </span>
+            <span class="socials__item socials__item--inst" data-go-link="https://www.instagram.com/">
+                <svg width="32" height="32"><use xlink:href="/img/svg/sprite.svg#soc-inst-header"></use></svg>
+            </span>
+            <span class="socials__item socials__item--inst" data-go-link="https://www.instagram.com/">
+                <svg width="32" height="32"><use xlink:href="/img/svg/sprite.svg#soc-inst-footer"></use></svg>
+            </span>
+        </span>
+        
+            
+    </div>
+</div>
+
 
 //= templates/footer.html
