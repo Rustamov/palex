@@ -41,8 +41,7 @@ iframe {
 
 
 .text {
-  line-height: 1.25;
-  font-size: px-to-rem(20);
+  line-height: 1.625;
   font-weight: 400;
   font-style: normal;
 
@@ -517,12 +516,12 @@ $inputTextPdLeft: 35px;
       box-shadow: none;
       background: $color-main-2;
       transition: background 0.2s;
-      color: inherit;
+      color: #fff;
 
       &:hover,
       &:active,
       &:focus{
-        color: inherit;
+        color: #fff;
         background: darken($color-main-2, 10);
       }
     }
@@ -586,7 +585,7 @@ $inputTextPdLeft: 35px;
 .socials {
   display: flex;
   align-items: center;
-  color: $color-main-3;
+  color: $color-main-4;
 
   &__item {
     display: inline-block;
@@ -602,7 +601,7 @@ $inputTextPdLeft: 35px;
     }
     
     &:hover {
-      color: darken($color-main-3, 10);
+      color: darken($color-main-4, 10);
     }
 
     svg {
