@@ -1,6 +1,6 @@
-@import '_libs';
-@import '_fonts';
-@import '_ui';
+@import 'libs';
+@import 'fonts';
+@import 'ui';
 
 
 
@@ -27,10 +27,23 @@ body {
 }
 
 
+@import 'header';
+@import 'footer';
 
-@import '_header';
+@import 'block-accordion';
+
+
+@import 'sec-intro';
+@import 'sec-workflow';
+@import 'sec-feedback';
+@import 'sec-portfolio';
+@import 'sec-calc';
+@import 'sec-main-about';
 
 
 
 
-@import '_media';
+
+
+
+@import 'media';

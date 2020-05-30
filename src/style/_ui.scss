@@ -8,7 +8,33 @@ $color-main-3: #5665EB;
 $color-main-4: #71A5F4;
 
 $color-main-5: #E1E3EF;
+
 $color-main-6: #777E88;
+$color-main-7: #202328;
+
+.columns {
+	display: flex;
+	justify-content: space-between;
+}
+.v-hidden:not(:focus):not(:active),
+input[type="checkbox"].v-hidden,
+input[type="radio"].v-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border: 0;
+
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+}
 
 
 
@@ -644,9 +670,10 @@ $inputTextPdLeft: 35px;
 // @extends;
 .section-title {
   font-family: $ffFuturis;
+  font-size: 38px;
+  line-height: 1.35;
   font-style: normal;
   font-weight: 700;
-  font-size: 38px;
 }
 
 .section-title-2 {
@@ -654,8 +681,29 @@ $inputTextPdLeft: 35px;
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
-  color: rgba(255, 255, 255, 0.68);
+  // color: rgba(255, 255, 255, 0.68);
+}
+
+
+
+.link-resset {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+.logo {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 }
 
 // END @extends;
+
 

@@ -8,86 +8,85 @@
         <p>Отправьте нам ваши контактные данные и наш менеджер<br> перезвонит вам в течении 15 минут</p>
         <div class="feedback-form">
             <div class="feedback-form__main">
-            <form class="js-validate js-feedback-form" action="#" autocomplete="off"><!-- js-feedback-form for backend -->
-                    <input type="hidden" name="Форма" value="Cвяжитесь с нами">
+                <form class="js-validate js-feedback-form" action="#" autocomplete="off"><!-- js-feedback-form for backend -->
+                        <input type="hidden" name="Форма" value="Cвяжитесь с нами">
 
-                    <div class="feedback-form__fields">
-                        <div class="feedback-form__fields-item">
-                            <label class="input-text">
-                                <input class="input-text__field" type="text" name="Name" required data-parsley-person-name>
-                                <span class="input-text__placeholder">Имя</span>
-                            </label>
+                        <div class="feedback-form__fields">
+                            <div class="feedback-form__fields-item">
+                                <label class="input-text">
+                                    <input class="input-text__field" type="text" name="Name" required data-parsley-person-name>
+                                    <span class="input-text__placeholder">Имя</span>
+                                </label>
+                            </div>
+
+                            <br>
+
+                            <div class="feedback-form__fields-item feedback-form__fields-item--mb-60">
+                                <label class="input-text">
+                                    <input class="input-text__field" type="tel" name="tel" required>
+                                    <span class="input-text__placeholder">Телефон</span>
+                                </label>
+                            </div>
+                            
+                            <br>          
+
+                            <div class="feedback-form__fields-item feedback-form__fields-item--mb-60">
+                                <label class="input-text">
+                                    <input class="input-text__field" type="email" name="email" required>
+                                    <span class="input-text__placeholder">Электронная почта</span>
+                                </label>
+                            </div>
+                            
+                            <br>
+
+                            <div class="feedback-form__fields-item">
+                                <label class="input-text">
+                                    <textarea class="input-text__field" name="Message" rows="4" required></textarea>
+                                    <span class="input-text__placeholder">Сообщение</span>
+                                </label>
+                            </div>
                         </div>
-
+                        
                         <br>
 
-                        <div class="feedback-form__fields-item feedback-form__fields-item--mb-60">
-                            <label class="input-text">
-                                <input class="input-text__field" type="tel" name="tel" required>
-                                <span class="input-text__placeholder">Телефон</span>
-                            </label>
-                        </div>
-                        
-                        <br>          
+                        <div class="feedback-form__agree">
+                            <span class="checkbox-wrap">
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="Оплата через сайт" value="Да">
+                                    <i class="checkbox__icon"></i>
+                                    <span class="checkbox__text">Оплата через сайт</span>
+                                </label>
+                            </span>
 
-                        <div class="feedback-form__fields-item feedback-form__fields-item--mb-60">
-                            <label class="input-text">
-                                <input class="input-text__field" type="email" name="email" required>
-                                <span class="input-text__placeholder">Электронная почта</span>
-                            </label>
+                            <span class="radio-wrap">
+                                <label class="radio">
+                                    <input class="radio__input" type="radio" name="Вам нужен" value="Редизайн сайта">
+                                    <i class="radio__bg"></i>
+                                    <span class="radio__text">Редизайн сайта</span>
+                                </label>
+                            </span>
+
+                            <span class="radio-wrap">
+                                <label class="radio">
+                                    <input class="radio__input" type="radio" name="Вам нужен" value="Дизайн сайта + продвижение">
+                                    <i class="radio__bg"></i>
+                                    <span class="radio__text">Дизайн сайта + продвижение</span>
+                                </label>
+                            </span>
+                            
                         </div>
-                        
                         <br>
-
-                        <div class="feedback-form__fields-item">
-                            <label class="input-text">
-                                <textarea class="input-text__field" name="Message" rows="4" required></textarea>
-                                <span class="input-text__placeholder">Сообщение</span>
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <br>
-
-                    <div class="feedback-form__agree">
-                        <span class="checkbox-wrap">
-                            <label class="checkbox">
-                                <input class="checkbox__input" type="checkbox" name="Оплата через сайт" value="Да">
-                                <i class="checkbox__icon"></i>
-                                <span class="checkbox__text">Оплата через сайт</span>
-                            </label>
-                        </span>
-
-                        <span class="radio-wrap">
-                            <label class="radio">
-                                <input class="radio__input" type="radio" name="Вам нужен" value="Редизайн сайта">
-                                <i class="radio__bg"></i>
-                                <span class="radio__text">Редизайн сайта</span>
-                            </label>
-                        </span>
-
-                        <span class="radio-wrap">
-                            <label class="radio">
-                                <input class="radio__input" type="radio" name="Вам нужен" value="Дизайн сайта + продвижение">
-                                <i class="radio__bg"></i>
-                                <span class="radio__text">Дизайн сайта + продвижение</span>
-                            </label>
-                        </span>
-                        
-                    </div>
-                    <br>
-                    <div class="feedback-form__submit-wrap">
-                        <button class="btn btn--theme-def btn--geom-def feedback-form__submit" type="submit">Отправить</button>
-                    </div>	       
-            </form>
-        </div>
-
-        <div class="feedback-form__message">
-            <div class="feedback-form__message-text text">
-                    <p>Благодарим за обращение</p>
+                        <div class="feedback-form__submit-wrap">
+                            <button class="btn btn--theme-def btn--geom-def feedback-form__submit" type="submit">Отправить</button>
+                        </div>	       
+                </form>
             </div>
-        </div>
 
+            <div class="feedback-form__message">
+                <div class="feedback-form__message-text text">
+                        <p>Благодарим за обращение</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -104,6 +103,7 @@
                 <use xlink:href="/img/svg/sprite.svg#arr-small-right"></use>
             </svg>
         </button>
+
 
         <span class="socials">
             <span class="socials__item socials__item--fb" data-go-link="https://www.facebook.com/">

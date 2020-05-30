@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg">
-    <symbol id="slide-arr-left">
+    <symbol id="arr-small-left">
         <path d="M.47 6.53a.75.75 0 010-1.06L5.243.697a.75.75 0 111.06 1.06L2.061 6l4.242 4.243a.75.75 0 01-1.06 1.06L.47 6.53zm1.03.22H1v-1.5h.5v1.5z" fill="currentcolor"/>
     </symbol>
 
-    <symbol id="slide-arr-right">
+    <symbol id="arr-small-right">
         <path d="M6.53 6.53a.75.75 0 000-1.06L1.757.697a.75.75 0 00-1.06 1.06L4.939 6 .697 10.243a.75.75 0 001.06 1.06L6.53 6.53zm-1.03.22H6v-1.5h-.5v1.5z" fill="currentcolor"/>
     </symbol>
 

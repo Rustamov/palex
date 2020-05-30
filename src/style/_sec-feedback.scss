@@ -1,0 +1,87 @@
+.consultation-request {
+	padding-top: 145px;
+	padding-bottom: 120px;
+	color: #fff;
+
+	background-color: #5665EB;
+}
+
+.consultation-request__title {
+	color: rgba(255, 255, 255, 0.68);
+}
+
+.consultation-request__subtitle {
+	color: #ffffff;
+}
+
+.consultation-request__text {
+	font-family: FuturaBookC, sans-serif, Verdana;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 29px;
+	width: 480px;
+
+	color: #FFFFFF;	
+
+	margin-bottom: 52px;
+}
+
+.consultation-request__columns-left {
+	width: 600px;
+	// margin-right: 80px;
+}
+
+.consultation-request__columns-right img {
+	margin-top: 20px;
+	// width: 100%;
+}
+
+.consultation-request__form-wrapper {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin: -15px 0 0 0;
+}
+
+.consultation-request__form-wrapper > * {
+	margin-top: 15px;
+}
+
+.consultation-request__form-wrapper input {
+	border: none;
+	outline: none;
+
+	width: 290px;
+	min-height: 60px;
+
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 100px;	
+	padding-left: 35px;
+
+	color: #ffffff;
+}
+
+.consultation-request__form-wrapper input::placeholder {
+	color: #ffffff;
+}
+
+.consultation-request__form-wrapper input:valid {
+	border: none;
+}
+
+// .consultation-request__form-wrapper input:invalid {
+// 	border: 2px solid rgba(250, 20, 20, 0.6);
+// }
+
+.consultation-request__form-wrapper button {
+	width: 290px;
+}
+
+// .consultation-request__form-wrapper button:hover,
+// .consultation-request__form-wrapper button:active,
+// .consultation-request__form-wrapper button:focus {
+// 	background-color: #f76f6f;
+// 	border: 2px solid #f76f6f;
+// 	color: #ffffff;
+// }

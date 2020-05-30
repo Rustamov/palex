@@ -202,7 +202,45 @@ $(document).ready(function () {
               dots: false,
               infinite: false,
             });
-          };
+        };
+
+
+        
+	    $('.slider').slick({
+            centerMode: true,
+            variableWidth: true,
+            adaptiveHeight: false,
+            nextArrow: $('.portfolio__next-slide-button'),
+            prevArrow: $('.portfolio__prev-slide-button')
+        });
+
+        let workProcessSlides = document.querySelectorAll('.work-process__slides-item');
+        let workProcessControls = document.querySelectorAll('.work-process__button');
+
+        for (let i = 0; i < workProcessControls.length; i++) {
+            (function (i) {
+                workProcessControls[i].addEventListener('click', function (evt) {
+                evt.preventDefault();
+
+
+                for (let j = 0; j < workProcessSlides.length; j++) {
+                    workProcessControls[j].classList.remove('work-process__button-active');
+                    workProcessSlides[j].classList.remove('work-process__slides-item-active');
+                }
+                workProcessControls[i].classList.add('work-process__button-active');
+                workProcessSlides[i].classList.add('work-process__slides-item-active');
+                });
+            })(i);
+        }
+
+        // let faqToggleButtons = document.querySelectorAll('.faq__expand-button');
+        // let faqElements = document.querySelectorAll('.faq__accordion');
+
+        // for (let i = 0; i < faqElements.length; i++) {
+        //     faqToggleButtons[i].onclick = function() {
+        //         faqElements[i].classList.toggle('faq__accordion-collapsed');
+        //     };
+        // }
     }
 
 
