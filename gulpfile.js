@@ -1,17 +1,3 @@
-// npm install --save-dev gulp
-// npm install --save-dev gulp-autoprefixer
-// npm install --save-dev gulp-minify-css
-// npm install --save-dev browser-sync
-// npm install --save-dev gulp-imagemin
-// npm install --save-dev imagemin-pngquant
-// npm install --save-dev gulp-uglifyes
-// npm install --save-dev gulp-sass
-// npm install --save-dev gulp-rigger
-// npm install --save-dev gulp-watch
-// npm install --save-dev gulp-rename
-// npm i --save-dev gulp-concat
-
-
 var gulp = require('gulp'),
     watch = require('gulp-watch'),
     prefixer = require('gulp-autoprefixer'),
@@ -32,7 +18,7 @@ var path = {
         js: 'build/js/',
         css: 'build/css/',
         img: 'build/img/',
-        media: 'build/media/',
+        // media: 'build/media/',
         root: 'build/',
         fonts: 'build/fonts/'
     },
@@ -47,12 +33,14 @@ var path = {
             'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
             'node_modules/jquery-mask-plugin/dist/jquery.mask.min.js',
             'node_modules/parsleyjs/dist/parsley.min.js',
+            'node_modules/parallax-js/dist/parallax.min.js',
+            
 
             'src/js/main.js',
         ],
         style: 'src/style/**/*.scss',
         img: 'src/img/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
-        media: 'src/media/**/*.*',
+        // media: 'src/media/**/*.*',
         root: 'src/root/**/*.*',
         fonts: 'src/fonts/**/*.*'
     },
@@ -122,11 +110,11 @@ gulp.task('fonts:build', function (done) {
         .pipe(gulp.dest(path.build.fonts))
     done();
 });
-gulp.task('media:build', function (done) {
-    gulp.src(path.src.media)
-        .pipe(gulp.dest(path.build.media))
-    done();
-});
+// gulp.task('media:build', function (done) {
+//     gulp.src(path.src.media)
+//         .pipe(gulp.dest(path.build.media))
+//     done();
+// });
 gulp.task('root:build', function (done) {
     gulp.src(path.src.root)
         .pipe(gulp.dest(path.build.root))
@@ -137,7 +125,7 @@ gulp.task('build', gulp.series([
     'js:build',
     'style:build',
     'fonts:build',
-    'media:build',
+    // 'media:build',
     'root:build',
     'image:build'
 ]));

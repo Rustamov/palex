@@ -1,139 +1,179 @@
+.s-workflow {
+	padding: 135px 0 95px;
 
-.work-process {
-	font-family: $ffFuturis;
-	background-color: #E5E5E5;;
-	padding-top: 145px;
-	padding-bottom: 75px;
+	background-color: #E5E5E5;
 
-	color: #71A5F4;
+		
+	&__title {
+		@extend .title-2;
+		display: block;
+		margin: 0 0 10px;
+		color: #71A5F4;
+	}
+
+	&__subtitle {
+		@extend .title;
+
+		display: block;
+		margin: 0 0 72px;
+	
+		color: #000000;
+	}
+	
+
+	&__slides {
+		&-list {
+			position: relative;
+			list-style: none;
+		
+			width: 355px;
+			margin: 0;
+			padding: 10px 0 0;
+		}
+		
+		&-item {
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+		
+			opacity: 0;
+			transform: scale(0.9);
+			transition: all 0.3s 0.1s;
+			pointer-events: none;
+
+			&--active {
+				opacity: 1;
+				transform: scale(1);
+				pointer-events: visible;
+			}
+
+			&-title {
+				display: block;
+				margin: 0 0 30px;
+
+				font-family: $ffFuturis;
+				font-style: normal;
+				font-weight: 700;
+				font-size: 24px;			
+				color: #000000;				
+			}
+			
+			&-text {
+				font-style: normal;
+				font-weight: normal;
+				font-size: 20px;
+				// line-height: 29px;			
+			
+				color: #525466;	
+			}
+			
+			
+		}
+		
+		
+	
+	}
+
+
+	&__slider {
+			
+		&-controls-list {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			width: 737px;
+
+			padding: 0;
+
+			list-style: none;
+
+
+		}
+		
+		&-controls-item {
+			margin-bottom: 40px;
+		}
+	}
+
+	
+	&__step {
+		position: relative;
+		display: block;
+		width: 222px;
+		min-height: 100%;
+		padding: 35px 20px 33px 29px;
+	
+		background-color: #FFFFFF;
+		box-shadow: 0px 12px 40px rgba(74, 78, 84, 0.13);
+		border-radius: 12px;
+		cursor: pointer;
+
+		color: #000;
+		
+		transition: color 0.2s, box-shadow 0.3s;
+
+		&--active,
+		&:hover,
+		&:active {
+			color: $color-main-2;
+			box-shadow: 0px 12px 40px rgba(74, 78, 84, 0.33);
+
+		}
+
+		&-fly {
+			position: absolute;
+			top: 41%;
+			left: 25%;
+			z-index: 0;
+
+			&-figure {
+				display: inline-block;
+				vertical-align: middle;
+				width: 41px;
+				height: 43px;
+
+				background: #E2EDFD;
+				border-radius: 50%;
+			}
+		}
+
+		&-icon {
+			position: relative;
+			z-index: 1;
+			display: block;
+			height: 50px;
+			margin: 0 0 10px;
+
+			&-img {
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+
+		&-title {
+			position: relative;
+			z-index: 1;
+			display: block;
+			margin: 0 0 12px;
+			padding: 0;
+		
+			font-family: $ffFuturis;
+			font-style: normal;
+			font-weight: 700;
+			font-size: 20px;		
+			color: inherit;	
+		}
+		
+		&-text {
+			position: relative;
+			z-index: 1;
+			font-size: 14px;
+			color: #525466;
+		}
+	}
+
+
 }
 
 
-.work-process__subtitle {
-	@extend .section-title;
-	margin-bottom: 76px;
-
-	color: #000000;
-}
-
-.work-process__slider {
-	display: flex;
-	justify-content: space-between;
-}
-
-.work-process__slides-list {
-	position: relative;
-	list-style: none;
-
-	width: 450px;
-	margin-right: 100px;
-}
-
-.work-process__slides-item {
-	display: block;
-	position: absolute;
-	left: 0;
-	top: 0;
-
-	width: 350px;
-	display: none;
-}
-
-.work-process__slides-item-title {
-	font-family: FuturisBold, sans-serif, Verdana;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 24px;
-	line-height: 52px;
-
-	color: #000000;
-}
-
-.work-process__slides-item-text {
-	font-family: FuturaBookC, sans-serif, Verdana;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 20px;
-	line-height: 29px;
-	/* or 147% */
-
-
-	color: #525466;	
-}
-
-.work-process__slides-item-active {
-	display: block;
-}
-
-.work-process__slider-controls-list {
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-
-	list-style: none;
-}
-
-.work-process__slider-controls-item {
-	margin-bottom: 40px;
-}
-
-.work-process__button {
-	@extend .link-resset;
-	display: block;
-	width: 222px;
-	height: 231px;
-
-	padding-top: 100px;
-	padding-left: 30px;
-
-	background-color: #FFFFFF;
-	box-shadow: 0px 12px 40px rgba(74, 78, 84, 0.13);
-	border-radius: 12px;
-}
-
-// .work-process__button:hover,
-// .work-process__button:active,
-// .work-process__button:focus {
-// }
-
-
-.work-process__carousel-item__title {
-	position: relative;
-	margin: 0;
-	padding: 0;
-
-	font-family: FuturisBold, sans-serif, Verdana;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 20px;
-	line-height: 22px;
-
-	color: #000000;	
-
-	margin-bottom: 15px;
-}
-
-.work-process__carousel-item__title::before {
-	content: "";
-	position: absolute;
-
-	left: 0;
-	top: -66px;
-
-	width: 43px;
-	height: 43px;
-
-	background-image: url(../img/svg/analytics.svg);
-	background-position: 0 0;
-	background-repeat: no-repeat;
-}
-
-.work-process__carousel-item__text {
-	font-family: FuturaBookC, sans-serif, Verdana;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 21px;
-
-	color: #525466;
-}

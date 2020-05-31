@@ -193,54 +193,80 @@ $(document).ready(function () {
             window.open($(this).data('go-link'));
         });
 
-        if ( $('.sec-reviews__slides').length ) {
-            $('.sec-reviews__slides').slick({
-              slideToShow: 1,
-              arrows: true,
-              prevArrow: '<button class="btn-arrow btn-arrow--left">&nbsp;</button>',
-              nextArrow: '<button class="btn-arrow btn-arrow--right">&nbsp;</button>',
-              dots: false,
-              infinite: false,
-            });
-        };
-
-
+        $('.back-to-top').click(function(event) {
+            $('body,html').animate({scrollTop:0},300);
+          });
         
-	    $('.slider').slick({
-            centerMode: true,
-            variableWidth: true,
-            adaptiveHeight: false,
-            nextArrow: $('.portfolio__next-slide-button'),
-            prevArrow: $('.portfolio__prev-slide-button')
+        $(window).scroll(function() {
+            var scrollTop = $(window).scrollTop();
+        
+            if ( scrollTop > 300 ) {
+              $('.back-to-top').addClass('show');
+            } else {
+              $('.back-to-top').removeClass('show');
+            };
+        
         });
 
-        let workProcessSlides = document.querySelectorAll('.work-process__slides-item');
-        let workProcessControls = document.querySelectorAll('.work-process__button');
 
-        for (let i = 0; i < workProcessControls.length; i++) {
+        // var scene = document.getElementById('scene');
+        $('.js-parallax').each(function() {
+            var scene = $(this).get(0);
+            var parallaxInstance = new Parallax(scene, {
+                selector: '.js-layer'
+            });    
+        });
+        
+
+        // if ( $('.sec-reviews__slides').length ) {
+        //     $('.sec-reviews__slides').slick({
+        //       slideToShow: 1,
+        //       arrows: true,
+        //       prevArrow: '<button class="btn-arrow btn-arrow--left">&nbsp;</button>',
+        //       nextArrow: '<button class="btn-arrow btn-arrow--right">&nbsp;</button>',
+        //       dots: false,
+        //       infinite: false,
+        //     });
+        // };
+
+
+        if ( $('.s-portfolio__slider-item').length > 1 ) {
+            $('.js-s-portfolio-slider').slick({
+                centerMode: true,
+                variableWidth: true,
+                adaptiveHeight: false,
+                nextArrow: $('.js-s-portfolio-next'),
+                prevArrow: $('.js-s-portfolio-prev')
+            });
+        }
+
+        let workflowSlides = document.querySelectorAll('.s-workflow__slides-item');
+        let workflowControls = document.querySelectorAll('.s-workflow__step');
+
+        for (let i = 0; i < workflowControls.length; i++) {
             (function (i) {
-                workProcessControls[i].addEventListener('click', function (evt) {
-                evt.preventDefault();
+                workflowControls[i].addEventListener('mouseover', function (evt) {
+                    evt.preventDefault();
 
+                    for (let j = 0; j < workflowSlides.length; j++) {
+                        workflowControls[j].classList.remove('s-workflow__step--active');
+                        workflowSlides[j].classList.remove('s-workflow__slides-item--active');
+                    }
 
-                for (let j = 0; j < workProcessSlides.length; j++) {
-                    workProcessControls[j].classList.remove('work-process__button-active');
-                    workProcessSlides[j].classList.remove('work-process__slides-item-active');
-                }
-                workProcessControls[i].classList.add('work-process__button-active');
-                workProcessSlides[i].classList.add('work-process__slides-item-active');
+                    workflowControls[i].classList.add('s-workflow__step--active');
+                    workflowSlides[i].classList.add('s-workflow__slides-item--active');
                 });
             })(i);
         }
 
-        // let faqToggleButtons = document.querySelectorAll('.faq__expand-button');
-        // let faqElements = document.querySelectorAll('.faq__accordion');
+        let faqToggleButtons = document.querySelectorAll('.faq-accordion__expand-button');
+        let faqElements = document.querySelectorAll('.faq-accordion__item');
 
-        // for (let i = 0; i < faqElements.length; i++) {
-        //     faqToggleButtons[i].onclick = function() {
-        //         faqElements[i].classList.toggle('faq__accordion-collapsed');
-        //     };
-        // }
+        for (let i = 0; i < faqElements.length; i++) {
+            faqToggleButtons[i].onclick = function() {
+                faqElements[i].classList.toggle('open');
+            };
+        }
     }
 
 

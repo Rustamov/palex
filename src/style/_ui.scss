@@ -12,6 +12,9 @@ $color-main-5: #E1E3EF;
 $color-main-6: #777E88;
 $color-main-7: #202328;
 
+$color-main-8: #fedcdc;
+
+
 .columns {
 	display: flex;
 	justify-content: space-between;
@@ -205,6 +208,8 @@ textarea {
 
 $inputTextPdLeft: 35px;
 .input-text {
+  
+
   display: block;
   position: relative;
   margin: 0;
@@ -232,7 +237,6 @@ $inputTextPdLeft: 35px;
 
     &:hover,
     &:focus {
-      border-color: #000;
       box-shadow: none;
       border-radius: none; 
     }
@@ -248,6 +252,16 @@ $inputTextPdLeft: 35px;
     &::placeholder {
       color: inherit;
       opacity: 0.7;
+    }
+
+    &--bd {
+      border: 1px solid rgba(0, 0, 0, 0.15);
+
+      .input-text--dirty &,
+      &:hover,
+      &:focus {
+        border-color: rgba(0, 0, 0, 0.45);
+      }
     }
   }
 
@@ -273,6 +287,13 @@ $inputTextPdLeft: 35px;
     .input-text--dirty & {
       text-shadow: 1px 1px #000;
       transform: translate(-8px, -29px) scale(0.8);
+    }
+
+    &--bd {
+      .input-text--dirty & {
+        text-shadow: none;
+        transform: translate(-8px, -37px) scale(0.8);
+      }
     }
   }
 
@@ -334,14 +355,13 @@ $inputTextPdLeft: 35px;
   
 }
 
-
 .checkbox {
   $b: &;
 
   &-wrap {
     position: relative;
-    display: inline-block;
-    vertical-align: middle;
+    display: block;
+    width: 100%;
   }
 
   position: relative;
@@ -349,7 +369,7 @@ $inputTextPdLeft: 35px;
   align-items: start;
 
   vertical-align: middle;
-  padding: 11px 25px 11px 15px;
+  padding: 11px 20px 11px 15px;
 
   font-size: 16px;
   color: #fff;
@@ -428,8 +448,8 @@ $inputTextPdLeft: 35px;
 
   &-wrap {
     position: relative;
-    display: inline-block;
-    vertical-align: middle;
+    display: block;
+    width: 100%;
   }
 
   position: relative;
@@ -667,30 +687,6 @@ $inputTextPdLeft: 35px;
 
 }
 
-// @extends;
-.section-title {
-  font-family: $ffFuturis;
-  font-size: 38px;
-  line-height: 1.35;
-  font-style: normal;
-  font-weight: 700;
-}
-
-.section-title-2 {
-  font-family: $ffFuturis;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  // color: rgba(255, 255, 255, 0.68);
-}
-
-
-
-.link-resset {
-  color: inherit;
-  text-decoration: none;
-  outline: none;
-}
 
 .logo {
   display: block;
@@ -704,6 +700,98 @@ $inputTextPdLeft: 35px;
   }
 }
 
-// END @extends;
 
+
+
+
+/* Back top */
+.back-to-top {
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+  background-color: $color-main-3;
+  overflow: hidden;
+  text-indent: -99999px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  position: fixed;
+  bottom: 50px;
+  right: 3%;
+  cursor: pointer;
+ 
+  transition: 0.2s;
+
+  &.show:hover,
+  &.show:active {
+    opacity: 1;
+  }
+  &.show {
+    visibility: visible;
+    opacity: 0.5;
+    pointer-events: visible;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin-left: -8px;
+    margin-top: -4px;
+    border-top: 4px solid #fff;
+    border-left: 4px solid #fff;
+    background: none;
+    transform: rotate(45deg);
+  }
+
+  // @media screen and (max-width: 1500px) {
+  //   .back-to-top {
+  //     right: 0.2%;
+  //   }
+  // }
+  // @media screen and (max-width: 1024px) {
+  //   .back-to-top {
+  //     width: 45px;
+  //     height: 45px;
+  //   }
+  // }
+}
+
+/* End Back top */
+
+// @extends;
+.title {
+  font-family: $ffFuturis;
+  font-size: 38px;
+  line-height: 1.35;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.title-2 {
+  font-family: $ffFuturis;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  // color: rgba(255, 255, 255, 0.68);
+}
+
+.link-resset {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+.list-resset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+// END @extends;
 
