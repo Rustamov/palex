@@ -1,5 +1,5 @@
 //= templates/header.html
-<section class="s-intro">
+<section class="s-intro" id="section-intro">
 	<div class="s-intro__inner">
 		<div class="container">
 			<div class="s-intro__columns">
@@ -10,7 +10,7 @@
 						<p>Комплексные решения эффективных интернет-магазинов с нуля. Больше 500 довольных клиентов из мира бизнеса</p>
 					</div>
 
-					<a class="btn btn--theme-def btn--geom-def" href="#free-consultation">Бесплатная консультация</a>
+					<a class="btn btn--theme-def btn--geom-def js-anchor" href="#free-consultation">Бесплатная консультация</a>
 				</div>
 
 				<div class="s-intro__column-right">
@@ -70,7 +70,7 @@
 	</div>
 </section>
 
-<section class="s-workflow">
+<section class="s-workflow" id="section-workflow">
 	<div class="container">
 		<h2 class="s-workflow__title">Процесс работы</h2>
 		<span class="s-workflow__subtitle">Как мы создаем <br>интернет магазин</span>
@@ -407,7 +407,7 @@
 	</div>
 </section>
 
-<section class="s-portfolio">
+<section class="s-portfolio" id="section-porfolio">
 	<div class="container">
 		<h2 class="s-portfolio__title">Наше портфолио</h2>
 		<span class="s-portfolio__subtitle">У нас уже более 50 <br>успешно завершенных <br>проектов</span>
@@ -485,11 +485,11 @@
   	</div>
 </section>
 
-<section class="s-calc">
+<section class="s-calc" id="section-calculation">
 	<div class="container">
 
 		<div class="s-calc__form">
-			<form action="#" class="js-validate" method="post">
+			<form action="#" class="js-validate js-consultation-form" method="post">
 				<div class="s-calc__columns">
 					<div class="s-calc__columns-left">
 						<h2 class="s-calc__title">Оставьте заявку</h2>
@@ -502,7 +502,7 @@
 								<span class="s-calc__form-radio-item"> 
 									<span class="radio-wrap">
 										<label class="radio">
-											<input class="radio__input" type="radio" name="Вам нужен" value="Дизайн с нуля">
+											<input class="radio__input js-consultation-input" type="radio" name="Вам нужен" value="Дизайн с нуля" data-price="10000">
 											<i class="radio__bg"></i>
 											<span class="radio__text">Дизайн с нуля</span>
 										</label>
@@ -512,7 +512,7 @@
 								<span class="s-calc__form-radio-item"> 
 									<span class="radio-wrap">
 										<label class="radio">
-											<input class="radio__input" type="radio" name="Вам нужен" value="Редизайн сайта">
+											<input class="radio__input js-consultation-input" type="radio" name="Вам нужен" value="Редизайн сайта" data-price="20000">
 											<i class="radio__bg"></i>
 											<span class="radio__text">Редизайн сайта</span>
 										</label>
@@ -522,7 +522,7 @@
 								<span class="s-calc__form-radio-item"> 
 									<span class="radio-wrap">
 										<label class="radio">
-											<input class="radio__input" type="radio" name="Вам нужен" value="Дизайн сайта + продвижение">
+											<input class="radio__input js-consultation-input" type="radio" name="Вам нужен" value="Дизайн сайта + продвижение" data-price="30000">
 											<i class="radio__bg"></i>
 											<span class="radio__text">Дизайн сайта + продвижение</span>
 										</label>
@@ -538,7 +538,7 @@
 								<span class="s-calc__form-checkbox-item s-calc__form-checkbox-item--w-210">
 									<span class="checkbox-wrap">
 										<label class="checkbox">
-											<input class="checkbox__input" type="checkbox" name="Оплата через сайт" value="Да">
+											<input class="checkbox__input js-consultation-input" type="checkbox" name="Оплата через сайт" value="Да" data-price="10000">
 											<i class="checkbox__icon"></i>
 											<span class="checkbox__text">Оплата через сайт</span>
 										</label>
@@ -549,7 +549,7 @@
 								<span class="s-calc__form-checkbox-item">
 									<span class="checkbox-wrap">
 										<label class="checkbox">
-											<input class="checkbox__input" type="checkbox" name="Бонусная программа" value="Да">
+											<input class="checkbox__input js-consultation-input" type="checkbox" name="Бонусная программа" value="Да" data-price="10000">
 											<i class="checkbox__icon"></i>
 											<span class="checkbox__text">Бонусная программа</span>
 										</label>
@@ -559,7 +559,7 @@
 								<span class="s-calc__form-checkbox-item">
 									<span class="checkbox-wrap">
 										<label class="checkbox">
-											<input class="checkbox__input" type="checkbox" name="Личный кабинет" value="Да">
+											<input class="checkbox__input js-consultation-input" type="checkbox" name="Личный кабинет" value="Да" data-price="10000">
 											<i class="checkbox__icon"></i>
 											<span class="checkbox__text">Личный кабинет</span>
 										</label>
@@ -569,7 +569,7 @@
 								<span class="s-calc__form-checkbox-item s-calc__form-checkbox-item--w-210">
 									<span class="checkbox-wrap">
 										<label class="checkbox">
-											<input class="checkbox__input" type="checkbox" name="SEO продвижение" value="Да">
+											<input class="checkbox__input js-consultation-input" type="checkbox" name="SEO продвижение" value="Да" data-price="10000">
 											<i class="checkbox__icon"></i>
 											<span class="checkbox__text">SEO продвижение</span>
 										</label>
@@ -579,7 +579,7 @@
 								<span class="s-calc__form-checkbox-item">
 									<span class="checkbox-wrap">
 										<label class="checkbox">
-											<input class="checkbox__input" type="checkbox" name="Отзывы" value="Да">
+											<input class="checkbox__input js-consultation-input" type="checkbox" name="Отзывы" value="Да" data-price="10000">
 											<i class="checkbox__icon"></i>
 											<span class="checkbox__text">Отзывы</span>
 										</label>
@@ -589,7 +589,7 @@
 								<span class="s-calc__form-checkbox-item">
 									<span class="checkbox-wrap">
 										<label class="checkbox">
-											<input class="checkbox__input" type="checkbox" name="Контекстная реклама" value="Да">
+											<input class="checkbox__input js-consultation-input" type="checkbox" name="Контекстная реклама" value="Да" data-price="10000">
 											<i class="checkbox__icon"></i>
 											<span class="checkbox__text">Контекстная реклама</span>
 										</label>
@@ -599,7 +599,7 @@
 								<span class="s-calc__form-checkbox-item s-calc__form-checkbox-item--w-210">
 									<span class="checkbox-wrap">
 										<label class="checkbox">
-											<input class="checkbox__input" type="checkbox" name="Оплата через сайт" value="Да">
+											<input class="checkbox__input js-consultation-input" type="checkbox" name="Оплата через сайт" value="Да" data-price="10000">
 											<i class="checkbox__icon"></i>
 											<span class="checkbox__text">Оплата через сайт</span>
 										</label>
@@ -609,7 +609,7 @@
 								<span class="s-calc__form-checkbox-item">
 									<span class="checkbox-wrap">
 										<label class="checkbox">
-											<input class="checkbox__input" type="checkbox" name="Бонусная программа" value="Да">
+											<input class="checkbox__input js-consultation-input" type="checkbox" name="Бонусная программа" value="Да" >
 											<i class="checkbox__icon"></i>
 											<span class="checkbox__text">Бонусная программа</span>
 										</label>
@@ -619,7 +619,7 @@
 								<span class="s-calc__form-checkbox-item">
 									<span class="checkbox-wrap">
 										<label class="checkbox">
-											<input class="checkbox__input" type="checkbox" name="Личный кабинет" value="Да">
+											<input class="checkbox__input js-consultation-input" type="checkbox" name="Личный кабинет" value="Да" >
 											<i class="checkbox__icon"></i>
 											<span class="checkbox__text">Личный кабинет</span>
 										</label>
@@ -633,7 +633,8 @@
 						<div class="s-calc__box">
 							<div class="s-calc__box-total">
 								<span class="s-calc__total">
-									<span class="s-calc__total-price">100 000</span>
+									<input class="js-consultation-input-total" type="hidden">
+									<span class="s-calc__total-price js-consultation-price">1</span>
 									<sup class="s-calc__total-money-sign">руб</sup>
 								</span>
 							</div>
@@ -663,7 +664,7 @@
 	</div>
 </section>
 
-<section class="s-about">
+<section class="s-about" id="section-about">
 	<div class="container">
 		<h2 class="s-about__title">Узнайте больше о нас</h2>
 		<span class="s-about__subtitle">Часто задаваемые вопросы</span>
@@ -732,7 +733,7 @@
 	</div>
 </section>
 
-<section class="s-text-block">
+<section class="s-text-block" id="section-text">
 	<div class="container">
 		<h2 class="s-text-block__title">Продвижение</h2>
 		<span class="s-text-block__subtitle">СЕО текст</span>

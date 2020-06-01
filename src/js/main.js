@@ -33,8 +33,13 @@ $(document).ready(function () {
 
     formScript();
 
+    freeConsForm();
+
     othersScript();
 
+
+
+    
     function headerMenu () {
         let headerNav = $('.header-menu'),
             headerNavIsOpen = headerNav.hasClass('open'),
@@ -179,6 +184,45 @@ $(document).ready(function () {
        
     }
 
+    function freeConsForm () {
+        let form = $('.js-consultation-form'),
+            trigger = form.find('.js-consultation-trigger'),
+            totalOutput = form.find('.js-consultation-price'),
+            totalInput = form.find('.js-consultation-input-total')
+           
+            ;
+
+        calc();
+
+        form.on('change', '.js-consultation-input', function() {
+            calc()
+        });
+
+        
+
+        function calc() {
+            let sum = 0;
+
+            form.find('.js-consultation-input:checked').each(function() {
+                let price = parseInt($(this).data('price'));
+
+                if ( !Number.isNaN(price) ) {
+                    sum += price;
+                }
+                
+            });
+
+            totalInput.val(sum);
+
+            let formatNum = String(sum).replace(/(.)(?=(\d{3})+$)/g,'$1  ');
+
+            totalOutput.html(formatNum);
+
+        }
+
+    }
+
+
     function othersScript() {
         $body.on('click touch', '[data-go-link]', function (e) {
             e.preventDefault();
@@ -261,6 +305,44 @@ $(document).ready(function () {
                 faqElements[i].classList.toggle('open');
             };
         }
+
+        
+        $body.on('click touch', '.js-anchor', function (e) {
+            let trigger = $(this),
+                href = trigger.attr('href'),
+                scrollOnMenuBtn = false,
+                scrollOnHeaderHide = false,
+                scrollSpeed = 800,
+                delay = 0;
+
+        
+            href = '#' + href.split("#").pop();
+
+            if ( !$(href).length  ) {
+                console.log('No find element with this id')
+                return
+            }
+
+            e.preventDefault();
+
+            let obj = $(e.target);
+
+            if ( obj.closest('.header-menu').length ) {
+                delay = 300;
+                globalOpt.headerMenuClose();
+            };
+
+            globalOpt.scrollToId(href, delay);    
+        });
+
+    }
+
+ 
+
+    var $hash = '#' + location.hash.replace('#','');
+    
+    if ( $hash !== '#' && $($hash).length  ) {
+        globalOpt.scrollToId($hash, 0);
     }
 
 
@@ -351,6 +433,58 @@ class globalConst {
             });
         }
     }
+
+    headerMenuClose() {
+        $('.header-menu').removeClass('open');
+        $body.removeClass('header-menu-open');
+        this.unfreeze();
+    }
+
+    
+    scrollToId(href, delay) {
+        let scrollOnMenuBtn = false,
+            scrollOnHeaderHide = false,
+            scrollSpeed = 800;
+
+
+        if ( href == '#interior' 
+            || href == '#magazines'
+        ) {
+            scrollOnMenuBtn = true;
+        }
+
+
+        setTimeout(function() {
+            scrollTo();
+        }, delay)
+
+        function scrollTo() {
+
+            let targetOffset = $(href).offset().top;
+
+            if ( wWidth >= W_MD && scrollOnMenuBtn ) {
+                targetOffset -= $('.side-nav__trigger-icon-line--1').offset().top - $('.header').offset().top;
+            } else if (wWidth < W_MD && !scrollOnHeaderHide) {
+                targetOffset -= $('.header').outerHeight();
+            }
+
+            try {
+                scrollSpeed = Math.abs($window.scrollTop() - targetOffset) / Math.abs($body[0].scrollHeight) * 4000
+            } catch(event) {
+                console.error(event);
+            }
+
+            scrollSpeed = ( scrollSpeed < 500 ) ? 500 : scrollSpeed;
+     
+            $('html, body').animate({ scrollTop: targetOffset }, scrollSpeed);
+
+            location.replace(href);
+            
+        }
+    };
+
+
 }
+   
 
 const globalOpt = new globalConst;
