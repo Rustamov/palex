@@ -1,18 +1,18 @@
 .header-nav {
-    font-size: 15px;
+    font-size: 14px;
 
     &__list {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 0 -10px;
+        margin: 0 -5px;
         padding: 0;
         list-style: none;
 
     }
 
     &__item {
-        margin: 0 10px;
+        margin: 0 5px;
     }
 
     &__link {
@@ -24,6 +24,29 @@
         &:focus {
             color: $color-main-1;
         }
+    }
+
+      
+    @include media-breakpoint-up(sm) {
+    }
+    
+    @include media-breakpoint-up(md) {
+    }
+    
+    @include media-breakpoint-up(lg) {
+    }
+    
+    @include media-breakpoint-up(xl) {
+        font-size: 15px;
+
+        &__list {
+            margin: 0 -10px;
+        }
+
+        &__item {
+            margin: 0 10px;
+        }
+
     }
 }
 
@@ -166,7 +189,7 @@
         width: 100%;
         min-height: 100vh;
         
-        padding: 138px 0 0;
+        padding: 108px 0 30px;
       }
   
       &-container {
@@ -175,19 +198,24 @@
     }
   
     &__nav {
+        margin-bottom: 30px;
+
         &-list {
             list-style-type: none;
-            margin: 0;
+            margin: 0 0 15px;
             padding: 0;
         }
     
         &-item {
+            text-align: center;
+
             &:not(:last-child) {
-                margin-bottom: 20px;
+                margin-bottom: 15px;
             }
         }
     
         &-link {
+            display: block;
             font-size: 18px;
             font-weight: 400;
             color: $color-main;
@@ -201,6 +229,11 @@
                 color: $color-main-1;
             }
         }
+    }
+    
+    &__contacts-block {
+        text-align: center;
+        margin-bottom: 30px;
     }
 
     &__number {
@@ -239,50 +272,63 @@
         }
     }
 
+    &__socials {
+        display: flex;
+        justify-content: center;
+    }
 
-  
-    @media (max-width: 991.98px) {
-  
-      &__trigger {
-        .header-menu-open.header-menu-scroll & {
-          position: fixed;
-          right: 0;
-          top: 1rem;
-          z-index: 3;
-        }
-      }
-  
-      &__content {
-  
-        background: #f5f5f5;
-        padding: px-to-rem(100) 0;
+    &__feedback {
+        display: block;
         text-align: center;
-  
-  
-        &::before {
-          content: none;
-          display: none;
+    }
+
+
+ 
+      
+    @include media-breakpoint-up(sm) {
+    }
+    
+    @include media-breakpoint-up(md) {
+    }
+    
+    @include media-breakpoint-up(lg) {
+        &__content {
+            &-inner {
+                padding-top: 138px;
+            }
         }
-  
-  
-        &-inner {
-          width: 100%;
-          min-height: 80vh;
-          min-height: calc(100vh - #{px-to-rem(200)});
+
+        &__nav {
+            margin-bottom: 0;
+
+            &-list {
+                margin-bottom: 0;
+            }
+
+            &-item {
+                text-align: left;
+
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+            }
         }
-  
-      }
-  
-  
-  
-      &__list {
-        margin: 0 0 5vh;
-      }
-  
-      &__contacts {
-        margin: 0 0 2vh;
-      }
-  
+
+        &__contacs-block {
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        &__socials {
+            justify-content: flex-start;
+        }
+
+        &__feedback {
+            text-align: left;
+        }
+    }
+    
+    @include media-breakpoint-up(xl) {
     }
 }
 
@@ -292,7 +338,18 @@
     position: relative;
     z-index: 2;
     margin: 0;
-    padding: 35px 0;
+    padding: 20px 0;
+
+    .header-menu-open &::before {
+        content: '';
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: #fff;
+    }
 
     &__row {
         justify-content: space-between;
@@ -301,7 +358,7 @@
 
     &__col {
         &-logo {
-            margin-right: 2%;
+            margin-right: 0%;
         }
 
         &-nav {
@@ -317,11 +374,34 @@
 
     &__logo {
         position: relative;
-        max-width: 152px;
+        max-width: 122px;
 
         .header-menu-open & {
             z-index: 2;
         }
 
+    }
+
+    @include media-breakpoint-up(sm) {
+    }
+    
+    @include media-breakpoint-up(md) {
+    }
+    
+    @include media-breakpoint-up(lg) {
+        padding: 35px 0;
+
+        &__col {
+            &-logo {
+                margin-right: 2%;
+            }
+        }
+    }
+    
+    @include media-breakpoint-up(xl) {
+        
+        &__logo {
+            max-width: 152px;
+        }
     }
 }

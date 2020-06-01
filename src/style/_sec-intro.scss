@@ -10,31 +10,32 @@
 	&__inner {
 		position: relative;
 		z-index: 1;
-		padding: 50px 0 135px;
-	
+		padding: 20px 0 105px;	
 	}
 
 	&__columns {
 		margin: 0;
 		padding: 0;
-	
+		text-align: center;
 		display: flex;
-		justify-content: space-between;
+		flex-wrap: wrap;
+		justify-content: center;
 	}
 	
 	&__column-left {
-		width: 49%;
-		padding-right: 30px;
+		width: 100%;
+		order: 2;
 	}
 	
 	&__column-right {
-		width: 51%;
+		width: 100%;
+		order: 1;
 	}
 	
 	&__title {
 		@extend .title;
 		display: block;
-		margin: 0 0 45px;
+		margin: 0 0 1.2em;
 
 		color: #363740;
 	}
@@ -46,17 +47,18 @@
 	&__text {
 		font-style: normal;
 		font-weight: normal;
-		font-size: 20px;
+		font-size: 16px;
 	
 		max-width: 340px;
-	
-		margin-bottom: 45px;
+		
+		margin: 0 auto 45px;
 	}
 
 	&__img {
 		&-wrap {
 			display: block;
-			margin: 0 -25px 0 -20px;
+			margin: 0 auto 30px;
+			max-width: 260px;
 			text-align: center;
 		}
 
@@ -140,6 +142,59 @@
 
 
 		
+	}
+
+
+	@include media-breakpoint-up(sm) {
+	}
+	
+	@include media-breakpoint-up(md) {
+	}
+	
+	@include media-breakpoint-up(lg) {
+		&__inner {
+			padding: 50px 0 135px;	
+		}
+
+		&__columns {
+			margin: 0;
+			padding: 0;
+			text-align: left;
+			display: flex;
+			justify-content: space-between;
+		}
+		
+		&__column-left {
+			width: 49%;
+			padding-right: 30px;
+			order: 1;
+
+		}
+		
+		&__column-right {
+			width: 51%;
+			order: 2;
+		}
+
+		&__text {
+			margin: 0 0 45px;
+			font-size: 20px;
+		}
+
+		&__img {
+			&-wrap {
+				display: block;
+				max-width: 100%;
+				margin: 0 -25px 0 -20px;
+				text-align: center;
+			}
+	
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+	
+	@include media-breakpoint-up(xl) {
 	}
 }
 

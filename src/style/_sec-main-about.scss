@@ -2,8 +2,7 @@
 /*__About__*/
 
 .s-about {
-	padding: 165px 0 80px;
-
+	padding: 75px 0 30px;
 
 	&__title {
 		@extend .title-2;
@@ -16,17 +15,26 @@
 	&__subtitle {
 		@extend .title;
 		display: block;
-		margin: 0 0 40px;
+		margin: 0 0 30px;
 
 		color: #000000;
 	}
+
+    @include media-breakpoint-up(lg) {
+		padding: 165px 0 80px;		
+		
+		&__subtitle {
+			margin: 0 0 40px;
+		}
+	}
+
 }
 
 
 
 /*__SEO__*/
 .s-text-block {
-	padding: 80px 0 120px;
+	padding: 30px 0 60px;
 	
 	&__title {
 		@extend .title-2;
@@ -47,10 +55,18 @@
 	&__text {
 		font-style: normal;
 		font-weight: normal;
-		font-size: 16px;
+		font-size: 14px;
 		line-height: 24px;
 		color: rgba(82, 84, 102, 0.9);
 	
+	}
+
+	@include media-breakpoint-up(lg) {
+		padding: 80px 0 120px;
+		
+		&__text {
+			font-size: 16px;
+		}
 	}
 }
 

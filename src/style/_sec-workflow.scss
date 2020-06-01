@@ -1,5 +1,5 @@
 .s-workflow {
-	padding: 135px 0 95px;
+	padding: 85px 0 65px;
 
 	background-color: #E5E5E5;
 
@@ -15,7 +15,7 @@
 		@extend .title;
 
 		display: block;
-		margin: 0 0 72px;
+		margin: 0 0 30px;
 	
 		color: #000000;
 	}
@@ -23,34 +23,19 @@
 
 	&__slides {
 		&-list {
-			position: relative;
-			list-style: none;
-		
-			width: 355px;
-			margin: 0;
-			padding: 10px 0 0;
+			@extend .list-resset;
 		}
 		
 		&-item {
-			display: block;
-			position: absolute;
-			left: 0;
-			top: 0;
-		
-			opacity: 0;
-			transform: scale(0.9);
-			transition: all 0.3s 0.1s;
-			pointer-events: none;
+			display: none;
 
 			&--active {
-				opacity: 1;
-				transform: scale(1);
-				pointer-events: visible;
+				display: block;
 			}
 
 			&-title {
 				display: block;
-				margin: 0 0 30px;
+				margin: 0 0 10px;
 
 				font-family: $ffFuturis;
 				font-style: normal;
@@ -62,7 +47,7 @@
 			&-text {
 				font-style: normal;
 				font-weight: normal;
-				font-size: 20px;
+				font-size: 16px;
 				// line-height: 29px;			
 			
 				color: #525466;	
@@ -77,12 +62,24 @@
 
 
 	&__slider {
+
+		&-row  {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		&-col-left {
+			
+		}
+		&-col-right {
+
+		}
 			
 		&-controls-list {
 			display: flex;
 			justify-content: space-between;
 			flex-wrap: wrap;
-			width: 737px;
+			max-width: 737px;
 
 			padding: 0;
 
@@ -92,7 +89,7 @@
 		}
 		
 		&-controls-item {
-			margin-bottom: 40px;
+			margin-bottom: 30px;
 		}
 	}
 
@@ -100,9 +97,9 @@
 	&__step {
 		position: relative;
 		display: block;
-		width: 222px;
+		width: 100%;
 		min-height: 100%;
-		padding: 35px 20px 33px 29px;
+		padding: 25px 20px 23px 23px;
 	
 		background-color: #FFFFFF;
 		box-shadow: 0px 12px 40px rgba(74, 78, 84, 0.13);
@@ -122,27 +119,13 @@
 		}
 
 		&-fly {
-			position: absolute;
-			top: 41%;
-			left: 25%;
-			z-index: 0;
-
-			&-figure {
-				display: inline-block;
-				vertical-align: middle;
-				width: 41px;
-				height: 43px;
-
-				background: #E2EDFD;
-				border-radius: 50%;
-			}
+			display: none;		
 		}
 
 		&-icon {
 			position: relative;
 			z-index: 1;
 			display: block;
-			height: 50px;
 			margin: 0 0 10px;
 
 			&-img {
@@ -168,11 +151,198 @@
 		&-text {
 			position: relative;
 			z-index: 1;
-			font-size: 14px;
+			font-size: 16px;
 			color: #525466;
 		}
 	}
 
+
+	@include media-breakpoint-up(sm) {
+	}
+	
+	@include media-breakpoint-up(md) {
+	}
+	
+	@include media-breakpoint-up(lg) {
+		&__subtitle {
+			margin-bottom: 2em;
+		}
+
+
+		&__slides {
+			&-list {
+				position: relative;
+			
+				width: 270px;
+				margin: 0;
+				padding: 10px 0 0;
+			}
+			
+			&-item {
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+			
+				opacity: 0;
+				transform: scale(0.9);
+				transition: all 0.3s 0.1s;
+				pointer-events: none;
+	
+				&--active {
+					opacity: 1;
+					transform: scale(1);
+					pointer-events: visible;
+				}
+	
+				&-title {
+					margin: 0 0 30px;
+					font-size: 24px;			
+				}
+				
+				&-text {
+					font-size: 16px;
+				}
+			}
+		}
+	
+	
+		&__slider {
+	
+			&-row  {
+				justify-content: space-between;
+			}
+	
+			&-col-left {
+				
+			}
+			&-col-right {
+	
+			}
+				
+			&-controls-list {
+				display: flex;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				max-width: 620px;
+	
+				padding: 0;
+	
+				list-style: none;
+	
+	
+			}
+		}
+	
+		
+		&__step {
+			position: relative;
+			display: block;
+			width: 190px;
+			min-height: 100%;
+			padding: 25px 10px 23px 19px;
+	
+			&-fly {
+				display: block;
+				position: absolute;
+				top: 41%;
+				left: 25%;
+				z-index: 0;
+	
+				// &--1 {
+				// 	top: 35%;
+				// 	left: 12%;
+				// }
+				// &--2 {
+				// 	top: 36%;
+				// 	left: 10%;
+				// }
+				// &--3 {
+				// 	top: 37%;
+				// 	left: 6%;
+				// }
+	
+				&-figure {
+					display: inline-block;
+					vertical-align: middle;
+					width: 41px;
+					height: 43px;
+	
+					background: #E2EDFD;
+					border-radius: 50%;
+				}
+	
+			}
+	
+			&-icon {
+				height: 50px;
+	
+				&-img {
+					max-height: 100%;
+				}
+			}
+	
+			&-title {
+				font-size: 18px;
+
+			}
+			
+			&-text {
+				font-size: 13px;
+			}
+		}
+	}
+	
+	@include media-breakpoint-up(xl) {
+		padding: 135px 0 95px;
+
+		&__slides {
+			&-list {
+				width: 355px;
+			}
+			
+			&-item {	
+				
+				&-text {
+					font-size: 20px;
+				}
+			}
+		}
+	
+	
+		&__slider {	
+			&-row  {
+
+			}
+	
+			&-col-left {
+				
+			}
+			&-col-right {
+	
+			}
+				
+			&-controls-list {
+				max-width: 737px;
+			}
+
+			&-controls-item {
+				margin-bottom: 40px;
+			}
+			
+
+		}
+	
+		
+		&__step {
+			width: 222px;
+			padding: 35px 20px 33px 29px;
+			
+			&-title {
+				font-size: 20px;
+			}
+		}
+	}
 
 }
 

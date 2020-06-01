@@ -453,8 +453,7 @@ $inputTextPdLeft: 35px;
   }
 
   position: relative;
-  display: inline-block;
-  vertical-align: middle;
+  display: block;
   padding: 10px 20px;
 
   font-size: 18px;
@@ -660,7 +659,7 @@ $inputTextPdLeft: 35px;
 .phone-number {
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;;
+  font-size: 16px;;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s;
@@ -683,6 +682,10 @@ $inputTextPdLeft: 35px;
     &:focus {
       color: $color-main-5;
     }
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 20px;
   }
 
 }
@@ -745,18 +748,6 @@ $inputTextPdLeft: 35px;
     background: none;
     transform: rotate(45deg);
   }
-
-  // @media screen and (max-width: 1500px) {
-  //   .back-to-top {
-  //     right: 0.2%;
-  //   }
-  // }
-  // @media screen and (max-width: 1024px) {
-  //   .back-to-top {
-  //     width: 45px;
-  //     height: 45px;
-  //   }
-  // }
 }
 
 /* End Back top */
@@ -764,18 +755,39 @@ $inputTextPdLeft: 35px;
 // @extends;
 .title {
   font-family: $ffFuturis;
-  font-size: 38px;
+  font-size: 26px;
   line-height: 1.35;
   font-style: normal;
   font-weight: 700;
+
+  
+  @include media-breakpoint-up(sm) {
+    font-size: 28px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 34px;
+  }
+  
+  @include media-breakpoint-up(xl) {
+    font-size: 38px;
+  }
 }
 
 .title-2 {
   font-family: $ffFuturis;
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 18px;
   // color: rgba(255, 255, 255, 0.68);
+
+  @include media-breakpoint-up(md) {
+    font-size: 20px;
+  }
+  
+  @include media-breakpoint-up(xl) {
+    font-size: 24px;
+  }
 }
 
 .link-resset {
@@ -795,3 +807,112 @@ $inputTextPdLeft: 35px;
 
 // END @extends;
 
+.visible-up {
+  &-sm {
+    display: none;
+    @include media-breakpoint-up(sm) {
+      display: block;
+    }
+  }
+  &-md {
+    display: none;
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+  &-lg {
+    display: none;
+    @include media-breakpoint-up(lg) {
+      display: block;
+    }
+  }
+  &-xl {
+    display: none;
+    @include media-breakpoint-up(xl) {
+      display: block;
+    }
+  }
+}
+
+
+
+.hide-up {
+
+  &-sm {
+    @include media-breakpoint-up(sm) {
+      display: none;
+    }
+  }
+
+  &-md {
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+  &-lg {
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
+  }
+  &-xl {
+    @include media-breakpoint-up(xl) {
+      display: none;
+    }
+  }
+}
+
+.hide-down {
+  &-xl {
+    @include media-breakpoint-down(xl) {
+      display: none;
+    }
+  }
+
+  &-lg {
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+  }
+
+  &-md {
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+
+  &-sm {
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+
+
+}
+
+
+@include media-breakpoint-down(lg) {
+}
+
+@include media-breakpoint-down(md) {
+}
+
+@include media-breakpoint-down(sm) {
+}
+
+@include media-breakpoint-down(xs) {
+}
+
+
+
+@include media-breakpoint-up(sm) {
+}
+
+@include media-breakpoint-up(md) {
+}
+
+@include media-breakpoint-up(lg) {
+}
+
+@include media-breakpoint-up(xl) {
+}

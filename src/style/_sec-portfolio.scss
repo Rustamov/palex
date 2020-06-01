@@ -2,8 +2,7 @@
 /*__Portfolio__*/
 
 .s-portfolio {
-	padding-top: 168px;	
-	padding-bottom: 110px;
+	padding: 60px 0 40px;
 
 	
 	&__title {
@@ -29,7 +28,7 @@
 		float: right;
 		position: relative;
 		display: flex;
-		margin-top: -95px;
+		margin-top: -60px;
 
 		&-prev {
 			margin-right: 10px;
@@ -51,8 +50,8 @@
 		justify-content: center;
 
 		&-item {
-			width: 1015px;
-			padding: 30px 25px 50px;
+			width: 320px;
+			padding: 30px 15px 50px;
 
 			outline: none;
 
@@ -65,29 +64,31 @@
 	&__item {
 		height: 100%;
 		width: 100%;
-		box-shadow: 0px 12px 40px rgba(74, 78, 84, 0.13);
-		border-radius: 12px;
+		
 		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-		padding: 50px;
+		flex-direction: column-reverse;
+		padding: 20px 20px 20px;
+
+		text-align: center;
+
+		border-radius: 8px;
+		box-shadow: 0px 12px 40px rgba(74, 78, 84, 0.13);
 
 
 		&-logo {
 			display: block;
 			height: 60px;
-			margin: 0 0 40px;
+			margin: 0 0 20px;
 
 			&-img {
+				display: inline-block !important;
+				vertical-align: middle;
 				width: auto;
 				max-height: 100%;
 			}
 		}
 
 		&-text {
-			max-width: 345px;
-			min-height: 8.9em;
 			margin: 0 0 15px;
 		}
 
@@ -99,12 +100,13 @@
 			&:active {
 				color: darken(#5665EB, 10);
 			}
-
 		}
-	}
 
-	.slider-container {
-	
+		&-img {
+			&-wrap {
+				margin: 0 0 25px;
+			}
+		}
 	}
 
 
@@ -114,6 +116,79 @@
 
 	&__prev-slide-button {
 		right: 68px;
+	}
+
+	@include media-breakpoint-up(sm) {
+		&__slider {
+
+			&-item {
+				width: 400px;
+				// padding: 30px 25px 50px;
+			}
+		}
+
+	}
+	
+	@include media-breakpoint-up(md) {
+	}
+	
+	@include media-breakpoint-up(lg) {
+		padding: 168px 0 110px;
+
+		&__controls {
+			margin-top: -95px;
+		}
+
+			
+		&__slider {
+
+			&-item {
+				width: 1015px;
+				padding: 30px 25px 50px;
+			}
+		}
+
+
+		&__item {
+			padding: 50px;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+
+			text-align: left;
+
+			border-radius: 12px;
+
+			&-logo {
+				display: block;
+				height: 60px;
+				margin: 0 0 40px;
+
+				&-img {
+					width: auto;
+					max-height: 100%;
+				}
+			}
+
+			&-text {
+				max-width: 345px;
+				min-height: 8.9em;
+			}
+
+			&-link {
+
+			}
+
+			&-img {
+				&-wrap {
+					margin: 0 0 25px;
+				}
+			}
+		}
+
+	}
+	
+	@include media-breakpoint-up(xl) {
 	}
 }
 

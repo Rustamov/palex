@@ -1,5 +1,5 @@
 .footer {
-	padding: 105px 0 43px;
+	padding: 65px 0 43px;
     
     font-size: 14px;
     color: rgba(255, 255, 255, 0.67);
@@ -18,8 +18,22 @@
         margin: 0 0 20px;
         color: #ffffff;
     }
+
+    &__col-right {
+    }
+
+    &__logo {
+        max-width: 147px;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
       
     &__nav {
+        max-width: 400px;
+        margin: 0 auto 30px;
+
+        text-align: center;
+
         &-list {
             list-style-type: none;
             margin: 0;
@@ -41,6 +55,15 @@
                 color: #fff;
             }
         }
+    }
+
+    &__contacs-block {
+        text-align: center;
+    }
+
+    &__socials {
+        display: flex;
+        justify-content: center;
     }
 
     &__number {
@@ -76,33 +99,88 @@
         }
     }
 
-    &__logo {
-        position: relative;
-        z-index: -10px;
-        max-width: 187px;
-
+    &__copyright {
+        display: block;
+        text-align: center;
     }
 
     &__policy,
-    &__agree-link {
-        @extend .link-resset;
-        transition: color 0.2s;
+    &__agree {
+        display: block;
+        text-align: center;
 
-        &:hover,
-        &:active {
-            color: #ffffff;
+        &-link,
+        &-link {
+            @extend .link-resset;
+            transition: color 0.2s;
+
+            &:hover,
+            &:active {
+                color: #ffffff;
+            }
         }
     }
 
+    &__agree {
+        margin-bottom: 25px;
+    }
 
+
+
+            
+    @include media-breakpoint-up(sm) {
+        
+    }
 
     @include media-breakpoint-up(md) {
         &__col-right {
             margin-left: auto;
             width: 220px;
         }
-        
     }
+
+    @include media-breakpoint-up(lg) {
+    	padding: 105px 0 43px;
+
+        &__logo {
+            position: relative;
+            top: -10px;
+            max-width: 187px;
+            margin: 0;
+        }
+
+        &__nav {
+            text-align: left;
+            margin: 0;
+            max-width: 100%;
+        }
+
+        &__contacs {
+            text-align: left;
+        }
+    
+        &__socials {
+            justify-content: flex-start;
+        }
+
+        &__copyright {
+            text-align: left;
+        }
+
+        &__policy,
+        &__agree {
+            text-align: left;
+        }
+
+        &__agree {
+            margin-bottom: 0;
+        }
+    }
+
+    @include media-breakpoint-up(xl) {
+
+    }
+
 
 }
 

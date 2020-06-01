@@ -1,5 +1,5 @@
 .s-calc {
-	padding: 130px 0 120px;
+	padding: 70px 0 60px;
 
 	background-color: $color-main-2;
 	
@@ -7,8 +7,8 @@
 
 	&__columns {
 		display: flex;
-		justify-content: space-between;
-		align-items: flex-end;
+		flex-direction: column;
+		align-items: center;
 
 		&-left {
 			max-width: 630px;
@@ -28,20 +28,20 @@
 	&__subtitle {
 		@extend .title;
 		display: block;
-		margin: 0 0 50px;
+		margin: 0 0 35px;
 
 		color: #FFFFFF;
 	}
 
 	&__form {
 		&-fieldset-1 {
-			margin: 0 0 65px;
+			margin: 0 0 35px;
 			padding: 0;
 			border: none;
 		}
 
 		&-fieldset-2 {
-			margin: 0;
+			margin: 0 0 35px;
 			padding: 0;
 			border: none;
 		}
@@ -64,6 +64,7 @@
 			}
 
 			&-item {
+				width: 100%;
 				padding: 10px 7px 0;
 
 				&--w-210 {
@@ -81,6 +82,7 @@
 			}
 
 			&-item {
+				width: 100%;
 				padding: 10px 7px 0;
 			}
 
@@ -94,11 +96,11 @@
 	}
 
 	
+	&__box {
+		// margin-top: -100px;
 
-	
-	&__box {	
-		margin-top: -100px;
-		padding: 85px 18% 50px;
+
+		padding: 30px 7% 20px;
 
 		font-family: $ffFuturaBookC;
 		color: $color-main;
@@ -119,7 +121,7 @@
 			font-family: $ffFuturaBookC;
 			font-style: normal;
 			font-weight: normal;
-			font-size: 18px;
+			font-size: 16px;
 			color: #525466;			
 		}		
 
@@ -165,7 +167,7 @@
 		&-price {
 			vertical-align: middle;
 
-			font-size: 52px;
+			font-size: 46px;
 			margin-left: -0.15em;
 		}
 
@@ -177,8 +179,141 @@
 
 	
 	
+
+	@include media-breakpoint-up(sm) {
+		&__form {	
+			&-checkbox {
+				&-group {
+				}
+	
+				&-item {
+					width: auto;
+				}
+	
+			}
+	
+			&-radio {
+				&-group {
+				}
+	
+				&-item {
+					width: auto;
+				}
+	
+			}
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+	}
+
+	@include media-breakpoint-up(lg) {
+		padding: 130px 0 120px;
+
+		&__subtitle {
+			margin: 0 0 50px;
+		}
+
+		&__columns {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: flex-end;
+	
+			&-left {
+				max-width: 630px;
+			}
+			
+			&-right {
+				max-width: 445px;
+			}
+		}
+
+		&__form {
+			&-fieldset-1 {
+				margin: 0 0 65px;
+			}
+	
+			&-fieldset-2 {
+				margin: 0;
+			}
+	
+			&-legend {
+				margin: 0 0 20px;
+				font-size: 18px;
+			}
+	
+			// &-checkbox {
+			// 	&-group {
+			// 	}
+	
+			// 	&-item {
+					
+			// 	}
+	
+			// }
+	
+			// &-radio {
+			// 	&-group {
+			// 	}
+	
+			// 	&-item {
+					
+			// 	}
+	
+			// }
+	
+			// &-legend {}
+	
+			// &-submit {
+			// }
+		}
+
+		&__box {	
+			// margin-top: -100px;
+			
+			padding: 85px 10% 50px;
+
+			border-radius: 12px;
+			
+			// &__total {
+			// }
+			
+			&-note {
+				font-size: 18px;		
+			}		
+	
+			// &-email {
+			// }
+	
+			// &-submit {
+			// }
+	
+			// &-disclaimer {
+			// }
 	
 	
+		}
+
+		&__total {
+
+	
+			&-price {
+				font-size: 52px;
+			}
+	
+			// &-money-sign {
+	
+			// }
+		}
+	
+	}
+
+	@include media-breakpoint-up(xl) {
+		&__box {	
+			padding-right: 18%;
+			padding-left: 18%;
+		}
+	}
 	
 	
 

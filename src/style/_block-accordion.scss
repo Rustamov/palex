@@ -10,7 +10,7 @@
 
 		font-style: normal;
 		font-weight: normal;
-		font-size: 16px;
+		font-size: 14px;
 
 
 		color: #525466;
@@ -32,7 +32,7 @@
 	&__text {
 		margin-bottom: 15px;
 		margin-top: -30px;
-		padding: 0 50px 30px 35px;
+		padding: 0 20px 30px 20px;
 
 		max-height: 0;
 		opacity: 0;
@@ -45,7 +45,7 @@
 			max-height: 1000px;
 			margin-top: 0px;
 
-			padding: 0 50px 30px 35px;
+			// padding: 0 50px 30px 35px;
 
 			opacity: 1;
 			
@@ -59,11 +59,11 @@
 		display: block;
 		position: relative;
 	
-		padding: 30px 50px 24px 35px;
+		padding: 30px 40px 24px 20px;
 		width: 100%;
 
 		font-weight: 400;
-		font-size: 24px;
+		font-size: 18px;
 	
 		color: #525466;
 		cursor: pointer;
@@ -78,7 +78,7 @@
 			height: 20px;
 		
 			top: 50%;
-			right: 36px;
+			right: 20px;
 		
 			background-color: #5665EB;
 			transform: translateY(-50%);
@@ -97,6 +97,39 @@
 	}
 
 
+	@include media-breakpoint-up(sm) {
+	}
+	
+	@include media-breakpoint-up(md) {
+	}
+	
+	@include media-breakpoint-up(lg) {
+		&__item {
+			font-size: 16px;
+		}
+		&__expand-button {
+			
+			padding: 30px 50px 24px 35px;
+			
+			font-size: 24px;
+
+			&::before,
+			&::after {
+				right: 36px;
+			}
+		}
+
+		&__text {
+			margin-bottom: 15px;
+			margin-top: -30px;
+			padding: 0 50px 30px 35px;
+
+		}
+
+	}
+	
+	@include media-breakpoint-up(xl) {
+	}
 
 }
 
