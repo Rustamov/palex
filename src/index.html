@@ -349,14 +349,25 @@
 											<span class="input-text__placeholder">Электронная почта</span>
 										</label>
 									</div>
+								
 
 									<div class="col-12 col-lg-6 s-feedback__form-col">
 										<button class="btn btn--theme-def btn--geom-def s-feedback__form-submit" type="submit">Бесплатная консультация</button>
 									</div>
+
+									<div class="col-12 s-feedback__form-col">
+										<div class="s-feedback__form-agree">
+											<span class="checkbox-s-wrap">
+												<label class="checkbox-s">
+													<input class="checkbox-s__input" type="checkbox" name="Согласие на обработку данных" value="Я соглашаюсь с Правилами пользования и Политикой конфиденциальности" required="" data-parsley-error-message="Нужно согласие на обработку данных" data-parsley-multiple="Согласие на обработку данных">
+													<i class="checkbox-s__icon"></i>
+													<span class="checkbox-s__text">Я соглашаюсь с Правилами пользования и Политикой конфиденциальности</span>
+												</label>
+											</span>
+										</div>
+									</div>
 				
 								</div>
-					
-			
 							</form>
 						</div>
 			
@@ -609,7 +620,7 @@
 								<span class="s-calc__form-checkbox-item">
 									<span class="checkbox-wrap">
 										<label class="checkbox">
-											<input class="checkbox__input js-consultation-input" type="checkbox" name="Бонусная программа" value="Да" >
+											<input class="checkbox__input js-consultation-input" type="checkbox" name="Бонусная программа" value="Да" data-price="10000">
 											<i class="checkbox__icon"></i>
 											<span class="checkbox__text">Бонусная программа</span>
 										</label>
@@ -619,7 +630,7 @@
 								<span class="s-calc__form-checkbox-item">
 									<span class="checkbox-wrap">
 										<label class="checkbox">
-											<input class="checkbox__input js-consultation-input" type="checkbox" name="Личный кабинет" value="Да" >
+											<input class="checkbox__input js-consultation-input" type="checkbox" name="Личный кабинет" value="Да" data-price="10000">
 											<i class="checkbox__icon"></i>
 											<span class="checkbox__text">Личный кабинет</span>
 										</label>
@@ -643,11 +654,29 @@
 								Примерная стоимость сайта включая проектрирование, дизайн, верстку и продвижение
 							</p>
 							
+												
+							<div class="s-calc__box-email">
+								<label class="input-text">
+									<input class="input-text__field input-text__field--bd" type="tel" name="tel" required>
+									<span class="input-text__placeholder input-text__placeholder--bd">Телефон</span>
+								</label>
+							</div>
+							
 							<div class="s-calc__box-email">
 								<label class="input-text">
 									<input class="input-text__field input-text__field--bd" type="email" name="email" required>
 									<span class="input-text__placeholder input-text__placeholder--bd">Электронная почта</span>
 								</label>
+							</div>
+
+							<div class="s-calc__agree">
+								<span class="checkbox-s-wrap">
+									<label class="checkbox-s checkbox-s--theme-dark">
+										<input class="checkbox-s__input" type="checkbox" name="Согласие на обработку данных" value="Я соглашаюсь с Правилами пользования и Политикой конфиденциальности" required="" data-parsley-error-message="Нужно согласие на обработку данных" data-parsley-multiple="Согласие на обработку данных">
+										<i class="checkbox-s__icon"></i>
+										<span class="checkbox-s__text">Я соглашаюсь с Правилами пользования и Политикой конфиденциальности</span>
+									</label>
+								</span>
 							</div>
 							
 							<div class="s-calc__box-submit">

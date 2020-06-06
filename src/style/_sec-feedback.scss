@@ -61,9 +61,15 @@
 			padding: 20px 10px 0;
 		}
 		
+		&-agree {
+			margin-left: 6px;
+		}
+
 		&-submit {
 			width: 100%;
 		}
+
+
 	}
 
 	&__img {
@@ -101,8 +107,7 @@
 			&--3 {
 				right: -100px;
 				bottom: -100px;
-			}
-			
+			}			
 		}
 
 		&-figure {
@@ -141,8 +146,6 @@
 				background: #cfecfb;
 			}
 		}
-
-
 		
 	}
 
