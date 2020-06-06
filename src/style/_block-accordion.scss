@@ -58,6 +58,7 @@
 		@extend .link-resset;
 		display: block;
 		position: relative;
+		z-index: 1;
 	
 		padding: 30px 40px 24px 20px;
 		width: 100%;

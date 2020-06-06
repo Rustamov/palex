@@ -324,8 +324,8 @@
 					</div>
 					
 					<div class="s-feedback__form">
-						<div class="s-feedback__form-main">
-							<form class="js-validate" action="#" autocomplete="off">
+						<form class="js-validate" action="#" autocomplete="off">
+							<div class="s-feedback__form-main">
 								<input type="hidden" name="Форма" value="Cвяжитесь с нами">
 		
 								<div class="row s-feedback__form-row">
@@ -338,7 +338,7 @@
 		
 									<div class="col-12 col-lg-6 s-feedback__form-col">
 										<label class="input-text">
-											<input class="input-text__field" type="tel" name="tel" required>
+											<input class="input-text__field" type="tel" name="tel" required data-parsley-ru-phone>
 											<span class="input-text__placeholder">Телефон</span>
 										</label>
 									</div>									
@@ -359,7 +359,7 @@
 										<div class="s-feedback__form-agree">
 											<span class="checkbox-s-wrap">
 												<label class="checkbox-s">
-													<input class="checkbox-s__input" type="checkbox" name="Согласие на обработку данных" value="Я соглашаюсь с Правилами пользования и Политикой конфиденциальности" required="" data-parsley-error-message="Нужно согласие на обработку данных" data-parsley-multiple="Согласие на обработку данных">
+													<input class="checkbox-s__input" type="checkbox" name="Согласие на обработку данных" value="Да" checked required data-parsley-error-message="Нужно согласие на обработку данных" data-parsley-multiple="Согласие на обработку данных">
 													<i class="checkbox-s__icon"></i>
 													<span class="checkbox-s__text">Я соглашаюсь с Правилами пользования и Политикой конфиденциальности</span>
 												</label>
@@ -368,14 +368,14 @@
 									</div>
 				
 								</div>
-							</form>
-						</div>
-			
-						<!-- <div class="s-feedback__form-message">
-							<div class="s-feedback__form-message-text text">
-									<p>Благодарим за обращение</p>
 							</div>
-						</div> -->
+				
+							<div class="s-feedback__form-message">
+								<div class="s-feedback__form-message-text text">
+									<p>Благодарим за обращение</p>
+								</div>
+							</div>
+						</form>
 					</div>
 				</div>
 
@@ -500,195 +500,208 @@
 	<div class="container">
 
 		<div class="s-calc__form">
+			
 			<form action="#" class="js-validate js-consultation-form" method="post">
-				<div class="s-calc__columns">
-					<div class="s-calc__columns-left">
-						<h2 class="s-calc__title">Оставьте заявку</h2>
-						<span class="s-calc__subtitle">Рассчитать стоимость <br>интернет-магазина онлайн</span>
+				<div class="s-calc__form-main">
 
-						<fieldset class="s-calc__form-fieldset-1">
-							<legend class="s-calc__form-legend">Вам нужен</legend>
-							
-							<div class="s-calc__form-radio-group">
-								<span class="s-calc__form-radio-item"> 
-									<span class="radio-wrap">
-										<label class="radio">
-											<input class="radio__input js-consultation-input" type="radio" name="Вам нужен" value="Дизайн с нуля" data-price="10000">
-											<i class="radio__bg"></i>
-											<span class="radio__text">Дизайн с нуля</span>
-										</label>
-									</span>
-								</span>
+					<div class="s-calc__columns">
+						<div class="s-calc__columns-left">
+							<h2 class="s-calc__title">Оставьте заявку</h2>
+							<span class="s-calc__subtitle">Рассчитать стоимость <br>интернет-магазина онлайн</span>
 
-								<span class="s-calc__form-radio-item"> 
-									<span class="radio-wrap">
-										<label class="radio">
-											<input class="radio__input js-consultation-input" type="radio" name="Вам нужен" value="Редизайн сайта" data-price="20000">
-											<i class="radio__bg"></i>
-											<span class="radio__text">Редизайн сайта</span>
-										</label>
-									</span>
-								</span>
+							<fieldset class="s-calc__form-fieldset-1">
+								<legend class="s-calc__form-legend">Вам нужен</legend>
 								
-								<span class="s-calc__form-radio-item"> 
-									<span class="radio-wrap">
-										<label class="radio">
-											<input class="radio__input js-consultation-input" type="radio" name="Вам нужен" value="Дизайн сайта + продвижение" data-price="30000">
-											<i class="radio__bg"></i>
-											<span class="radio__text">Дизайн сайта + продвижение</span>
-										</label>
+								<div class="s-calc__form-radio-group">
+									<span class="s-calc__form-radio-item"> 
+										<span class="radio-wrap">
+											<label class="radio">
+												<input class="radio__input js-consultation-input" type="radio" name="Вам нужен" value="Дизайн с нуля" data-price="10000">
+												<i class="radio__bg"></i>
+												<span class="radio__text">Дизайн с нуля</span>
+											</label>
+										</span>
 									</span>
-								</span>	
-							</div>
-						</fieldset>
 
-						<fieldset class="s-calc__form-fieldset-2">
-							<legend class="s-calc__form-legend">Дополнительные функции</legend>
-							
-							<div class="s-calc__form-checkbox-group">
-								<span class="s-calc__form-checkbox-item s-calc__form-checkbox-item--w-210">
-									<span class="checkbox-wrap">
-										<label class="checkbox">
-											<input class="checkbox__input js-consultation-input" type="checkbox" name="Оплата через сайт" value="Да" data-price="10000">
-											<i class="checkbox__icon"></i>
-											<span class="checkbox__text">Оплата через сайт</span>
-										</label>
+									<span class="s-calc__form-radio-item"> 
+										<span class="radio-wrap">
+											<label class="radio">
+												<input class="radio__input js-consultation-input" type="radio" name="Вам нужен" value="Редизайн сайта" data-price="20000">
+												<i class="radio__bg"></i>
+												<span class="radio__text">Редизайн сайта</span>
+											</label>
+										</span>
 									</span>
-								</span>
-							
+									
+									<span class="s-calc__form-radio-item"> 
+										<span class="radio-wrap">
+											<label class="radio">
+												<input class="radio__input js-consultation-input" type="radio" name="Вам нужен" value="Дизайн сайта + продвижение" data-price="30000">
+												<i class="radio__bg"></i>
+												<span class="radio__text">Дизайн сайта + продвижение</span>
+											</label>
+										</span>
+									</span>	
+								</div>
+							</fieldset>
 
-								<span class="s-calc__form-checkbox-item">
-									<span class="checkbox-wrap">
-										<label class="checkbox">
-											<input class="checkbox__input js-consultation-input" type="checkbox" name="Бонусная программа" value="Да" data-price="10000">
-											<i class="checkbox__icon"></i>
-											<span class="checkbox__text">Бонусная программа</span>
-										</label>
-									</span>
-								</span>
-
-								<span class="s-calc__form-checkbox-item">
-									<span class="checkbox-wrap">
-										<label class="checkbox">
-											<input class="checkbox__input js-consultation-input" type="checkbox" name="Личный кабинет" value="Да" data-price="10000">
-											<i class="checkbox__icon"></i>
-											<span class="checkbox__text">Личный кабинет</span>
-										</label>
-									</span>
-								</span>
-
-								<span class="s-calc__form-checkbox-item s-calc__form-checkbox-item--w-210">
-									<span class="checkbox-wrap">
-										<label class="checkbox">
-											<input class="checkbox__input js-consultation-input" type="checkbox" name="SEO продвижение" value="Да" data-price="10000">
-											<i class="checkbox__icon"></i>
-											<span class="checkbox__text">SEO продвижение</span>
-										</label>
-									</span>
-								</span>
-
-								<span class="s-calc__form-checkbox-item">
-									<span class="checkbox-wrap">
-										<label class="checkbox">
-											<input class="checkbox__input js-consultation-input" type="checkbox" name="Отзывы" value="Да" data-price="10000">
-											<i class="checkbox__icon"></i>
-											<span class="checkbox__text">Отзывы</span>
-										</label>
-									</span>
-								</span>
-
-								<span class="s-calc__form-checkbox-item">
-									<span class="checkbox-wrap">
-										<label class="checkbox">
-											<input class="checkbox__input js-consultation-input" type="checkbox" name="Контекстная реклама" value="Да" data-price="10000">
-											<i class="checkbox__icon"></i>
-											<span class="checkbox__text">Контекстная реклама</span>
-										</label>
-									</span>
-								</span>
+							<fieldset class="s-calc__form-fieldset-2">
+								<legend class="s-calc__form-legend">Дополнительные функции</legend>
 								
-								<span class="s-calc__form-checkbox-item s-calc__form-checkbox-item--w-210">
-									<span class="checkbox-wrap">
-										<label class="checkbox">
-											<input class="checkbox__input js-consultation-input" type="checkbox" name="Оплата через сайт" value="Да" data-price="10000">
-											<i class="checkbox__icon"></i>
-											<span class="checkbox__text">Оплата через сайт</span>
-										</label>
+								<div class="s-calc__form-checkbox-group">
+									<span class="s-calc__form-checkbox-item s-calc__form-checkbox-item--w-210">
+										<span class="checkbox-wrap">
+											<label class="checkbox">
+												<input class="checkbox__input js-consultation-input" type="checkbox" name="Оплата через сайт" value="Да" data-price="10000">
+												<i class="checkbox__icon"></i>
+												<span class="checkbox__text">Оплата через сайт</span>
+											</label>
+										</span>
 									</span>
-								</span>
+								
 
-								<span class="s-calc__form-checkbox-item">
-									<span class="checkbox-wrap">
-										<label class="checkbox">
-											<input class="checkbox__input js-consultation-input" type="checkbox" name="Бонусная программа" value="Да" data-price="10000">
-											<i class="checkbox__icon"></i>
-											<span class="checkbox__text">Бонусная программа</span>
-										</label>
+									<span class="s-calc__form-checkbox-item">
+										<span class="checkbox-wrap">
+											<label class="checkbox">
+												<input class="checkbox__input js-consultation-input" type="checkbox" name="Бонусная программа" value="Да" data-price="10000">
+												<i class="checkbox__icon"></i>
+												<span class="checkbox__text">Бонусная программа</span>
+											</label>
+										</span>
 									</span>
-								</span>
 
-								<span class="s-calc__form-checkbox-item">
-									<span class="checkbox-wrap">
-										<label class="checkbox">
-											<input class="checkbox__input js-consultation-input" type="checkbox" name="Личный кабинет" value="Да" data-price="10000">
-											<i class="checkbox__icon"></i>
-											<span class="checkbox__text">Личный кабинет</span>
-										</label>
+									<span class="s-calc__form-checkbox-item">
+										<span class="checkbox-wrap">
+											<label class="checkbox">
+												<input class="checkbox__input js-consultation-input" type="checkbox" name="Личный кабинет" value="Да" data-price="10000">
+												<i class="checkbox__icon"></i>
+												<span class="checkbox__text">Личный кабинет</span>
+											</label>
+										</span>
 									</span>
-								</span>
-							</div>
-						</fieldset>
-					</div>
 
-					<div class="s-calc__columns-right">
-						<div class="s-calc__box">
-							<div class="s-calc__box-total">
-								<span class="s-calc__total">
-									<input class="js-consultation-input-total" type="hidden">
-									<span class="s-calc__total-price js-consultation-price">1</span>
-									<sup class="s-calc__total-money-sign">руб</sup>
-								</span>
-							</div>
-							
-							<p class="s-calc__box-note">
-								Примерная стоимость сайта включая проектрирование, дизайн, верстку и продвижение
-							</p>
-							
-												
-							<div class="s-calc__box-email">
-								<label class="input-text">
-									<input class="input-text__field input-text__field--bd" type="tel" name="tel" required>
-									<span class="input-text__placeholder input-text__placeholder--bd">Телефон</span>
-								</label>
-							</div>
-							
-							<div class="s-calc__box-email">
-								<label class="input-text">
-									<input class="input-text__field input-text__field--bd" type="email" name="email" required>
-									<span class="input-text__placeholder input-text__placeholder--bd">Электронная почта</span>
-								</label>
-							</div>
+									<span class="s-calc__form-checkbox-item s-calc__form-checkbox-item--w-210">
+										<span class="checkbox-wrap">
+											<label class="checkbox">
+												<input class="checkbox__input js-consultation-input" type="checkbox" name="SEO продвижение" value="Да" data-price="10000">
+												<i class="checkbox__icon"></i>
+												<span class="checkbox__text">SEO продвижение</span>
+											</label>
+										</span>
+									</span>
 
-							<div class="s-calc__agree">
-								<span class="checkbox-s-wrap">
-									<label class="checkbox-s checkbox-s--theme-dark">
-										<input class="checkbox-s__input" type="checkbox" name="Согласие на обработку данных" value="Я соглашаюсь с Правилами пользования и Политикой конфиденциальности" required="" data-parsley-error-message="Нужно согласие на обработку данных" data-parsley-multiple="Согласие на обработку данных">
-										<i class="checkbox-s__icon"></i>
-										<span class="checkbox-s__text">Я соглашаюсь с Правилами пользования и Политикой конфиденциальности</span>
+									<span class="s-calc__form-checkbox-item">
+										<span class="checkbox-wrap">
+											<label class="checkbox">
+												<input class="checkbox__input js-consultation-input" type="checkbox" name="Отзывы" value="Да" data-price="10000">
+												<i class="checkbox__icon"></i>
+												<span class="checkbox__text">Отзывы</span>
+											</label>
+										</span>
+									</span>
+
+									<span class="s-calc__form-checkbox-item">
+										<span class="checkbox-wrap">
+											<label class="checkbox">
+												<input class="checkbox__input js-consultation-input" type="checkbox" name="Контекстная реклама" value="Да" data-price="10000">
+												<i class="checkbox__icon"></i>
+												<span class="checkbox__text">Контекстная реклама</span>
+											</label>
+										</span>
+									</span>
+									
+									<span class="s-calc__form-checkbox-item s-calc__form-checkbox-item--w-210">
+										<span class="checkbox-wrap">
+											<label class="checkbox">
+												<input class="checkbox__input js-consultation-input" type="checkbox" name="Оплата через сайт" value="Да" data-price="10000">
+												<i class="checkbox__icon"></i>
+												<span class="checkbox__text">Оплата через сайт</span>
+											</label>
+										</span>
+									</span>
+
+									<span class="s-calc__form-checkbox-item">
+										<span class="checkbox-wrap">
+											<label class="checkbox">
+												<input class="checkbox__input js-consultation-input" type="checkbox" name="Бонусная программа" value="Да" data-price="10000">
+												<i class="checkbox__icon"></i>
+												<span class="checkbox__text">Бонусная программа</span>
+											</label>
+										</span>
+									</span>
+
+									<span class="s-calc__form-checkbox-item">
+										<span class="checkbox-wrap">
+											<label class="checkbox">
+												<input class="checkbox__input js-consultation-input" type="checkbox" name="Личный кабинет" value="Да" data-price="10000">
+												<i class="checkbox__icon"></i>
+												<span class="checkbox__text">Личный кабинет</span>
+											</label>
+										</span>
+									</span>
+								</div>
+							</fieldset>
+						</div>
+
+						<div class="s-calc__columns-right">
+							<div class="s-calc__box">
+								<div class="s-calc__box-total">
+									<span class="s-calc__total">
+										<input class="js-consultation-input-total" type="hidden">
+										<span class="s-calc__total-price js-consultation-price">1</span>
+										<sup class="s-calc__total-money-sign">руб</sup>
+									</span>
+								</div>
+								
+								<p class="s-calc__box-note">
+									Примерная стоимость сайта включая проектрирование, дизайн, верстку и продвижение
+								</p>
+								
+													
+								<div class="s-calc__box-email">
+									<label class="input-text">
+										<input class="input-text__field input-text__field--bd" type="tel" name="tel" required data-parsley-ru-phone>
+										<span class="input-text__placeholder input-text__placeholder--bd">Телефон</span>
 									</label>
-								</span>
-							</div>
-							
-							<div class="s-calc__box-submit">
-								<button class="btn btn--theme-def btn--geom-def s-calc__form-submit" type="submit">Получить точный рассчет</button>
-							</div>
+								</div>
+								
+								<div class="s-calc__box-email">
+									<label class="input-text">
+										<input class="input-text__field input-text__field--bd" type="email" name="email" required>
+										<span class="input-text__placeholder input-text__placeholder--bd">Электронная почта</span>
+									</label>
+								</div>
 
-							<p class="s-calc__box-disclaimer">
-								Данный расчет является приблизительным и не является офертой
-							</p>
+								<div class="s-calc__agree">
+									<span class="checkbox-s-wrap">
+										<label class="checkbox-s checkbox-s--theme-dark">
+											<input class="checkbox-s__input" type="checkbox" name="Согласие на обработку данных" value="Да" checked required data-parsley-error-message="Нужно согласие на обработку данных" data-parsley-multiple="Согласие на обработку данных">
+											<i class="checkbox-s__icon"></i>
+											<span class="checkbox-s__text">Я соглашаюсь с Правилами пользования и Политикой конфиденциальности</span>
+										</label>
+									</span>
+								</div>
+								
+								<div class="s-calc__box-submit">
+									<button class="btn btn--theme-def btn--geom-def s-calc__form-submit" type="submit">Получить точный рассчет</button>
+								</div>
+
+								<p class="s-calc__box-disclaimer">
+									Данный расчет является приблизительным и не является офертой
+								</p>
+							</div>
 						</div>
 					</div>
+				</div>
+
+				<div class="s-calc__form-message">
+					<div class="s-calc__form-message-text text">
+						<p>Благодарим за обращение</p>
+					</div>
+				</div>
 			</form>
+
+			
 		</div>
 	</div>
 </section>

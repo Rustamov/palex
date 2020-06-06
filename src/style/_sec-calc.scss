@@ -1,4 +1,6 @@
 .s-calc {
+	$b: &;
+
 	padding: 70px 0 60px;
 
 	background-color: $color-main-2;
@@ -34,6 +36,21 @@
 	}
 
 	&__form {
+		position: relative;
+
+		&-main {
+			transform: translate(0, 0);
+			opacity: 1;
+			pointer-events: visible;
+			transition: transform 0.7s, opacity 0.7s;
+		
+			#{$b}--form-sent & {
+			  transform: translate(0, -200px);
+			  opacity: 0;
+			  pointer-events: none;
+			}
+		}
+
 		&-fieldset-1 {
 			margin: 0 0 35px;
 			padding: 0;
@@ -93,6 +110,32 @@
 		&-submit {
 			width: 100%;
 		}
+
+		&-message {
+			width: 100%;
+			position: absolute;
+			top: 80%;
+			left: 50%;
+			padding: px-to-rem(90) 0;	
+			text-align: center;
+			transform: translate(-50%, 0);
+			opacity: 0;
+			pointer-events: none;
+			transition: transform 0.7s, opacity 0.7s;
+		
+			#{$b}--form-sent & {
+			  transform: translate(-50%, -50%);
+			  opacity: 1;
+			  pointer-events: visible;
+			}
+		
+			&-text {
+			  font-size: 26px;
+			  font-weight: 400;
+			}
+		}
+
+
 	}
 
 	
@@ -242,6 +285,14 @@
 			&-legend {
 				margin: 0 0 20px;
 				font-size: 18px;
+			}
+
+			&-message {
+				top: 50%;
+
+				&-text {
+					font-size: 30px;
+				}
 			}
 	
 			// &-checkbox {

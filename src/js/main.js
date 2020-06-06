@@ -181,7 +181,6 @@ $(document).ready(function () {
             wrap.toggleClass('input-text--dirty', input.val() !== '')
         });
 
-       
     }
 
     function freeConsForm () {
@@ -346,10 +345,9 @@ $(document).ready(function () {
     }
 
 
-
 });
 
-class globalConst {
+class makeGlobalOpt {
     formResset(form) {
         if ( !form.length ) {
             return
@@ -364,6 +362,9 @@ class globalConst {
     
             wrap.toggleClass('input-text--dirty', input.val() != '');
         });
+
+        form.find(':checked').prop('checked', false);
+
     
         form.parsley().reset();
     
@@ -374,12 +375,14 @@ class globalConst {
             form.addClass('form-sent');
     
     
-            formResset(form);
+            globalOpt.formResset(form);
     
             if ( form.closest('.popup').length ) {
                 form.closest('.popup').addClass('popup--form-sent');
-            } else if ( form.closest('.feedback-form').length ) {
-                form.closest('.feedback-form').addClass('feedback-form--form-sent');
+            } else if ( form.closest('.s-feedback').length ) {
+                form.closest('.s-feedback').addClass('s-feedback--form-sent');
+            } else if ( form.closest('.s-calc').length ) {
+                form.closest('.s-calc').addClass('s-calc--form-sent');
             }
     
     
@@ -387,7 +390,8 @@ class globalConst {
             setTimeout(function() {
                 form.removeClass('form-sent');
                 $('.popup').removeClass('popup--form-sent');
-                $('.feedback-form').removeClass('feedback-form--form-sent');
+                $('.s-feedback').removeClass('s-feedback--form-sent');
+                $('.s-calc').removeClass('s-calc--form-sent');
     
                 if ($('.fancybox-is-open').length) {
                     $.fancybox.close();
@@ -462,11 +466,11 @@ class globalConst {
 
             let targetOffset = $(href).offset().top;
 
-            if ( wWidth >= W_MD && scrollOnMenuBtn ) {
-                targetOffset -= $('.side-nav__trigger-icon-line--1').offset().top - $('.header').offset().top;
-            } else if (wWidth < W_MD && !scrollOnHeaderHide) {
-                targetOffset -= $('.header').outerHeight();
-            }
+            // if ( wWidth >= W_MD && scrollOnMenuBtn ) {
+            //     targetOffset -= $('.side-nav__trigger-icon-line--1').offset().top - $('.header').offset().top;
+            // } else if (wWidth < W_MD && !scrollOnHeaderHide) {
+            //     targetOffset -= $('.header').outerHeight();
+            // }
 
             try {
                 scrollSpeed = Math.abs($window.scrollTop() - targetOffset) / Math.abs($body[0].scrollHeight) * 4000
@@ -487,4 +491,4 @@ class globalConst {
 }
    
 
-const globalOpt = new globalConst;
+const globalOpt = new makeGlobalOpt;
