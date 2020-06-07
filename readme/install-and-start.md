@@ -5,7 +5,7 @@
 ### Клонируй репозиторий
 
 ```
-git clone https://gitlab.com/avdcomp/project-name.git && cd project-name
+git clone https://github.com/Rustamov/project-name.git && cd project-name
 ```
 
 ### Установи зависимости
